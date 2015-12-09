@@ -174,7 +174,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="92"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在播放：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKu-hE-TB0">
-                                                <rect key="frame" x="20" y="18" width="580" height="21"/>
+                                                <rect key="frame" x="20" y="10" width="580" height="21"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Oer-cn-ecH"/>
@@ -184,7 +184,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00/00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4g-qz-qvv">
-                                                <rect key="frame" x="20" y="50" width="132" height="21"/>
+                                                <rect key="frame" x="20" y="42" width="132" height="21"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="KFz-fD-W6R"/>
@@ -195,7 +195,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYW-ax-7ed">
-                                                <rect key="frame" x="292" y="29" width="68" height="64"/>
+                                                <rect key="frame" x="342" y="29" width="68" height="64"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="68" id="ZVv-VK-7bw"/>
@@ -207,7 +207,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccY-nL-YDZ">
-                                                <rect key="frame" x="371" y="33" width="50" height="50"/>
+                                                <rect key="frame" x="421" y="33" width="50" height="50"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="mfn-ji-9f4"/>
@@ -221,7 +221,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUi-hk-hmS">
-                                                <rect key="frame" x="431" y="25" width="69" height="67"/>
+                                                <rect key="frame" x="481" y="25" width="69" height="67"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="8bk-xK-aMe"/>
@@ -246,8 +246,8 @@
                                             <constraint firstAttribute="bottom" secondItem="ccY-nL-YDZ" secondAttribute="bottom" constant="9" id="epk-Y9-AeP"/>
                                             <constraint firstItem="dYW-ax-7ed" firstAttribute="top" secondItem="91Y-N9-tue" secondAttribute="top" constant="29" id="hnM-1v-Lj4"/>
                                             <constraint firstAttribute="bottom" secondItem="dYW-ax-7ed" secondAttribute="bottom" constant="-1" id="kbK-JN-iJf"/>
-                                            <constraint firstAttribute="trailing" secondItem="WUi-hk-hmS" secondAttribute="trailing" constant="100" id="l85-7A-Z80"/>
-                                            <constraint firstItem="VKu-hE-TB0" firstAttribute="top" secondItem="91Y-N9-tue" secondAttribute="top" constant="18" id="pq3-58-hME"/>
+                                            <constraint firstAttribute="trailing" secondItem="WUi-hk-hmS" secondAttribute="trailing" constant="50" id="l85-7A-Z80"/>
+                                            <constraint firstItem="VKu-hE-TB0" firstAttribute="top" secondItem="91Y-N9-tue" secondAttribute="top" constant="10" id="pq3-58-hME"/>
                                             <constraint firstItem="VKu-hE-TB0" firstAttribute="leading" secondItem="91Y-N9-tue" secondAttribute="leading" constant="20" id="z8y-vL-lIu"/>
                                         </constraints>
                                     </view>

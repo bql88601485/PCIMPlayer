@@ -30,6 +30,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 
+@property (strong, nonatomic)PlaySongListVC *list;
 
 @property (strong, nonatomic) TAGPlayer *player;
 
@@ -87,9 +88,15 @@
 //播放列表
 - (IBAction)playSongList:(id)sender {
     
-    PlaySongListVC *list = [[PlaySongListVC alloc] initWithNibName:@"PlaySongListVC" bundle:nil];
-    
-    [self presentViewController:list animated:YES completion:^{
+    if (nil == _list) {
+        _list = [PlaySongListVC shareSonglist];
+        _list.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+        _list.view.alpha = 0.2;
+        [self.view addSubview:_list.view];
+    }
+    [UIView animateWithDuration:0.35 animations:^{
+        _list.view.alpha = 1;
+        _list.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
         
     }];
     
@@ -102,10 +109,10 @@
 //播放示例音乐
 - (IBAction)playTmpSong:(id)sender {
     
-    NSURL *nameStr = [Tool getAppSongName:@"红颜劫" type:@"mp3"];
+    NSURL *nameStr = [Tool getAppSongName:@"实例音乐Demo - 纯音乐版" type:@"mp3"];
     [self.player PlayerName:nameStr];
     
-    [self SongName:@"红颜劫"];
+    [self SongName:@"实例音乐Demo - 纯音乐版"];
 }
 //自动手动切换
 - (IBAction)auteOrYourEvent:(id)sender {

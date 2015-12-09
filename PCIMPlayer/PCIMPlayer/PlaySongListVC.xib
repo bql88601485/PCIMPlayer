@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlaySongListVC">
             <connections>
+                <outlet property="tableview" destination="uPN-3I-yz0" id="DUu-kG-H1i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,9 +15,78 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYl-EK-SjA">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.1137254902" green="0.40784313729999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QsI-ub-Bho">
+                    <rect key="frame" x="0.0" y="200" width="0.0" height="66"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9p-9B-O76">
+                            <rect key="frame" x="8" y="13" width="183" height="35"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="9IJ-MA-bZ6"/>
+                                <constraint firstAttribute="width" constant="183" id="xnM-AW-LzO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="返回                 音乐列表">
+                                <color key="titleColor" red="0.11372549019607843" green="0.40784313725490196" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="goBack:" destination="-1" eventType="touchUpInside" id="12F-aB-bM7"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.1137254902" green="0.1764705882" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="7Uc-Ue-KM4"/>
+                        <constraint firstItem="B9p-9B-O76" firstAttribute="top" secondItem="QsI-ub-Bho" secondAttribute="top" constant="13" id="Jwj-1j-3UP"/>
+                        <constraint firstItem="B9p-9B-O76" firstAttribute="leading" secondItem="QsI-ub-Bho" secondAttribute="leading" constant="8" id="tDK-Jp-WSk"/>
+                        <constraint firstAttribute="width" constant="320" id="yMH-Dg-VKX"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uPN-3I-yz0">
+                    <rect key="frame" x="0.0" y="276" width="0.0" height="324"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="1zp-NL-Caf"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="oQh-od-3h2"/>
+                        <outlet property="delegate" destination="-1" id="ihH-3m-P7G"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.1019607843" green="0.16078431369999999" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="uPN-3I-yz0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3fm-01-HDw"/>
+                <constraint firstItem="ZYl-EK-SjA" firstAttribute="leading" secondItem="uPN-3I-yz0" secondAttribute="trailing" id="CVO-ux-pnF"/>
+                <constraint firstItem="ZYl-EK-SjA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FAW-e1-xAB"/>
+                <constraint firstItem="ZYl-EK-SjA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="RAB-tw-IuV"/>
+                <constraint firstItem="QsI-ub-Bho" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UBr-qR-SyN"/>
+                <constraint firstItem="QsI-ub-Bho" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="Uoa-Nd-gjl"/>
+                <constraint firstAttribute="trailing" secondItem="QsI-ub-Bho" secondAttribute="trailing" constant="704" id="VMT-Hc-mBe"/>
+                <constraint firstItem="uPN-3I-yz0" firstAttribute="top" secondItem="QsI-ub-Bho" secondAttribute="bottom" id="iCJ-TB-vMr"/>
+                <constraint firstAttribute="bottom" secondItem="ZYl-EK-SjA" secondAttribute="bottom" id="opK-l1-C5C"/>
+                <constraint firstAttribute="trailing" secondItem="uPN-3I-yz0" secondAttribute="trailing" constant="704" id="rUf-vP-3Ff"/>
+                <constraint firstAttribute="bottom" secondItem="uPN-3I-yz0" secondAttribute="bottom" id="vmU-dI-eZ1"/>
+                <constraint firstAttribute="trailing" secondItem="ZYl-EK-SjA" secondAttribute="trailing" id="xwe-Vg-N9P"/>
+            </constraints>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="CVO-ux-pnF"/>
+                    <exclude reference="VMT-Hc-mBe"/>
+                    <exclude reference="rUf-vP-3Ff"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

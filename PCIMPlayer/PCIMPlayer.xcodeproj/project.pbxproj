@@ -81,9 +81,34 @@
 		E5D05E241C1809CB0084B92D /* recogniz_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DFD1C1809CB0084B92D /* recogniz_play@2x.png */; };
 		E5D05E261C1822D10084B92D /* Qidong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E251C1822D10084B92D /* Qidong@2x.png */; };
 		E5D05E291C183DE60084B92D /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E281C183DE60084B92D /* Tool.m */; };
-		E5D05E2B1C184BF40084B92D /* 实例音乐纯音乐版.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E2A1C184BF40084B92D /* 实例音乐纯音乐版.mp3 */; };
 		E5D05E2F1C18523C0084B92D /* PlaySongListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E2D1C18523C0084B92D /* PlaySongListVC.m */; };
 		E5D05E301C18523C0084B92D /* PlaySongListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E2E1C18523C0084B92D /* PlaySongListVC.xib */; };
+		E5D05E321C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E311C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 */; };
+		E5D05E541C1861630084B92D /* CLTreeView_LEVEL0_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E361C1861630084B92D /* CLTreeView_LEVEL0_Cell.m */; };
+		E5D05E551C1861630084B92D /* CLTreeView_LEVEL0_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E381C1861630084B92D /* CLTreeView_LEVEL0_Model.m */; };
+		E5D05E561C1861630084B92D /* CLTreeView_LEVEL1_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E3A1C1861630084B92D /* CLTreeView_LEVEL1_Cell.m */; };
+		E5D05E571C1861630084B92D /* CLTreeView_LEVEL1_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E3C1C1861630084B92D /* CLTreeView_LEVEL1_Model.m */; };
+		E5D05E581C1861630084B92D /* CLTreeView_LEVEL2_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E3E1C1861630084B92D /* CLTreeView_LEVEL2_Cell.m */; };
+		E5D05E591C1861630084B92D /* CLTreeView_LEVEL2_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E401C1861630084B92D /* CLTreeView_LEVEL2_Model.m */; };
+		E5D05E5A1C1861630084B92D /* CLTreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E421C1861630084B92D /* CLTreeViewController.m */; };
+		E5D05E5B1C1861630084B92D /* CLTreeViewNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E441C1861630084B92D /* CLTreeViewNode.m */; };
+		E5D05E5C1C1861630084B92D /* contacts_collect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E461C1861630084B92D /* contacts_collect@2x.png */; };
+		E5D05E5D1C1861630084B92D /* contacts_major@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E471C1861630084B92D /* contacts_major@2x.png */; };
+		E5D05E5E1C1861630084B92D /* head1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E481C1861630084B92D /* head1.jpg */; };
+		E5D05E5F1C1861630084B92D /* head2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E491C1861630084B92D /* head2.jpg */; };
+		E5D05E601C1861630084B92D /* head3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E4A1C1861630084B92D /* head3.jpg */; };
+		E5D05E611C1861630084B92D /* head4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E4B1C1861630084B92D /* head4.jpg */; };
+		E5D05E621C1861630084B92D /* head5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E4C1C1861630084B92D /* head5.jpg */; };
+		E5D05E631C1861630084B92D /* head6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E4D1C1861630084B92D /* head6.jpg */; };
+		E5D05E641C1861630084B92D /* head7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E4E1C1861630084B92D /* head7.jpg */; };
+		E5D05E651C1861630084B92D /* head8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E4F1C1861630084B92D /* head8.jpg */; };
+		E5D05E661C1861630084B92D /* the_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E501C1861630084B92D /* the_arrow.png */; };
+		E5D05E671C1861630084B92D /* Level0_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E511C1861630084B92D /* Level0_Cell.xib */; };
+		E5D05E681C1861630084B92D /* Level1_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E521C1861630084B92D /* Level1_Cell.xib */; };
+		E5D05E691C1861630084B92D /* Level2_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E531C1861630084B92D /* Level2_Cell.xib */; };
+		E5D05E6D1C1866230084B92D /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E6B1C1866230084B92D /* SettingVC.m */; };
+		E5D05E6E1C1866230084B92D /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E6C1C1866230084B92D /* SettingVC.xib */; };
+		E5D05E701C186B5C0084B92D /* 马頔 - 南山南.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E6F1C186B5C0084B92D /* 马頔 - 南山南.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,10 +193,45 @@
 		E5D05E251C1822D10084B92D /* Qidong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Qidong@2x.png"; sourceTree = "<group>"; };
 		E5D05E271C183DE60084B92D /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
 		E5D05E281C183DE60084B92D /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
-		E5D05E2A1C184BF40084B92D /* 实例音乐纯音乐版.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "实例音乐纯音乐版.mp3"; sourceTree = "<group>"; };
 		E5D05E2C1C18523C0084B92D /* PlaySongListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySongListVC.h; sourceTree = "<group>"; };
 		E5D05E2D1C18523C0084B92D /* PlaySongListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySongListVC.m; sourceTree = "<group>"; };
 		E5D05E2E1C18523C0084B92D /* PlaySongListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaySongListVC.xib; sourceTree = "<group>"; };
+		E5D05E311C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "实例音乐Demo - 纯音乐版.mp3"; sourceTree = "<group>"; };
+		E5D05E341C1861630084B92D /* CLTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTree.h; sourceTree = "<group>"; };
+		E5D05E351C1861630084B92D /* CLTreeView_LEVEL0_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeView_LEVEL0_Cell.h; sourceTree = "<group>"; };
+		E5D05E361C1861630084B92D /* CLTreeView_LEVEL0_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeView_LEVEL0_Cell.m; sourceTree = "<group>"; };
+		E5D05E371C1861630084B92D /* CLTreeView_LEVEL0_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeView_LEVEL0_Model.h; sourceTree = "<group>"; };
+		E5D05E381C1861630084B92D /* CLTreeView_LEVEL0_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeView_LEVEL0_Model.m; sourceTree = "<group>"; };
+		E5D05E391C1861630084B92D /* CLTreeView_LEVEL1_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeView_LEVEL1_Cell.h; sourceTree = "<group>"; };
+		E5D05E3A1C1861630084B92D /* CLTreeView_LEVEL1_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeView_LEVEL1_Cell.m; sourceTree = "<group>"; };
+		E5D05E3B1C1861630084B92D /* CLTreeView_LEVEL1_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeView_LEVEL1_Model.h; sourceTree = "<group>"; };
+		E5D05E3C1C1861630084B92D /* CLTreeView_LEVEL1_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeView_LEVEL1_Model.m; sourceTree = "<group>"; };
+		E5D05E3D1C1861630084B92D /* CLTreeView_LEVEL2_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeView_LEVEL2_Cell.h; sourceTree = "<group>"; };
+		E5D05E3E1C1861630084B92D /* CLTreeView_LEVEL2_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeView_LEVEL2_Cell.m; sourceTree = "<group>"; };
+		E5D05E3F1C1861630084B92D /* CLTreeView_LEVEL2_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeView_LEVEL2_Model.h; sourceTree = "<group>"; };
+		E5D05E401C1861630084B92D /* CLTreeView_LEVEL2_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeView_LEVEL2_Model.m; sourceTree = "<group>"; };
+		E5D05E411C1861630084B92D /* CLTreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeViewController.h; sourceTree = "<group>"; };
+		E5D05E421C1861630084B92D /* CLTreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeViewController.m; sourceTree = "<group>"; };
+		E5D05E431C1861630084B92D /* CLTreeViewNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTreeViewNode.h; sourceTree = "<group>"; };
+		E5D05E441C1861630084B92D /* CLTreeViewNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTreeViewNode.m; sourceTree = "<group>"; };
+		E5D05E461C1861630084B92D /* contacts_collect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts_collect@2x.png"; sourceTree = "<group>"; };
+		E5D05E471C1861630084B92D /* contacts_major@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contacts_major@2x.png"; sourceTree = "<group>"; };
+		E5D05E481C1861630084B92D /* head1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head1.jpg; sourceTree = "<group>"; };
+		E5D05E491C1861630084B92D /* head2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head2.jpg; sourceTree = "<group>"; };
+		E5D05E4A1C1861630084B92D /* head3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head3.jpg; sourceTree = "<group>"; };
+		E5D05E4B1C1861630084B92D /* head4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head4.jpg; sourceTree = "<group>"; };
+		E5D05E4C1C1861630084B92D /* head5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head5.jpg; sourceTree = "<group>"; };
+		E5D05E4D1C1861630084B92D /* head6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head6.jpg; sourceTree = "<group>"; };
+		E5D05E4E1C1861630084B92D /* head7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head7.jpg; sourceTree = "<group>"; };
+		E5D05E4F1C1861630084B92D /* head8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head8.jpg; sourceTree = "<group>"; };
+		E5D05E501C1861630084B92D /* the_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = the_arrow.png; sourceTree = "<group>"; };
+		E5D05E511C1861630084B92D /* Level0_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level0_Cell.xib; sourceTree = "<group>"; };
+		E5D05E521C1861630084B92D /* Level1_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level1_Cell.xib; sourceTree = "<group>"; };
+		E5D05E531C1861630084B92D /* Level2_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Level2_Cell.xib; sourceTree = "<group>"; };
+		E5D05E6A1C1866230084B92D /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		E5D05E6B1C1866230084B92D /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		E5D05E6C1C1866230084B92D /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		E5D05E6F1C186B5C0084B92D /* 马頔 - 南山南.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "马頔 - 南山南.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,10 +281,14 @@
 				E5D05E2C1C18523C0084B92D /* PlaySongListVC.h */,
 				E5D05E2D1C18523C0084B92D /* PlaySongListVC.m */,
 				E5D05E2E1C18523C0084B92D /* PlaySongListVC.xib */,
+				E5D05E6A1C1866230084B92D /* SettingVC.h */,
+				E5D05E6B1C1866230084B92D /* SettingVC.m */,
+				E5D05E6C1C1866230084B92D /* SettingVC.xib */,
 				E5D05D891C1802B50084B92D /* Main.storyboard */,
 				E5D05D8C1C1802B50084B92D /* Assets.xcassets */,
 				E5D05D8E1C1802B50084B92D /* LaunchScreen.storyboard */,
 				E5D05D911C1802B50084B92D /* Info.plist */,
+				E5D05E331C1861630084B92D /* CLTreeView */,
 				E5D05DA01C1802D60084B92D /* Frameworks */,
 				E5D05D801C1802B50084B92D /* Supporting Files */,
 			);
@@ -253,7 +317,8 @@
 		E5D05D9A1C1802CA0084B92D /* resour */ = {
 			isa = PBXGroup;
 			children = (
-				E5D05E2A1C184BF40084B92D /* 实例音乐纯音乐版.mp3 */,
+				E5D05E6F1C186B5C0084B92D /* 马頔 - 南山南.mp3 */,
+				E5D05E311C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 */,
 				E5D05E251C1822D10084B92D /* Qidong@2x.png */,
 				E5D05DC41C1809770084B92D /* 小曲儿-于归.jpg */,
 				E5D05DC51C1809770084B92D /* 朴树-平凡之路.jpg */,
@@ -346,6 +411,52 @@
 			path = Icon;
 			sourceTree = "<group>";
 		};
+		E5D05E331C1861630084B92D /* CLTreeView */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05E341C1861630084B92D /* CLTree.h */,
+				E5D05E351C1861630084B92D /* CLTreeView_LEVEL0_Cell.h */,
+				E5D05E361C1861630084B92D /* CLTreeView_LEVEL0_Cell.m */,
+				E5D05E371C1861630084B92D /* CLTreeView_LEVEL0_Model.h */,
+				E5D05E381C1861630084B92D /* CLTreeView_LEVEL0_Model.m */,
+				E5D05E391C1861630084B92D /* CLTreeView_LEVEL1_Cell.h */,
+				E5D05E3A1C1861630084B92D /* CLTreeView_LEVEL1_Cell.m */,
+				E5D05E3B1C1861630084B92D /* CLTreeView_LEVEL1_Model.h */,
+				E5D05E3C1C1861630084B92D /* CLTreeView_LEVEL1_Model.m */,
+				E5D05E3D1C1861630084B92D /* CLTreeView_LEVEL2_Cell.h */,
+				E5D05E3E1C1861630084B92D /* CLTreeView_LEVEL2_Cell.m */,
+				E5D05E3F1C1861630084B92D /* CLTreeView_LEVEL2_Model.h */,
+				E5D05E401C1861630084B92D /* CLTreeView_LEVEL2_Model.m */,
+				E5D05E411C1861630084B92D /* CLTreeViewController.h */,
+				E5D05E421C1861630084B92D /* CLTreeViewController.m */,
+				E5D05E431C1861630084B92D /* CLTreeViewNode.h */,
+				E5D05E441C1861630084B92D /* CLTreeViewNode.m */,
+				E5D05E451C1861630084B92D /* image */,
+				E5D05E511C1861630084B92D /* Level0_Cell.xib */,
+				E5D05E521C1861630084B92D /* Level1_Cell.xib */,
+				E5D05E531C1861630084B92D /* Level2_Cell.xib */,
+			);
+			path = CLTreeView;
+			sourceTree = "<group>";
+		};
+		E5D05E451C1861630084B92D /* image */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05E461C1861630084B92D /* contacts_collect@2x.png */,
+				E5D05E471C1861630084B92D /* contacts_major@2x.png */,
+				E5D05E481C1861630084B92D /* head1.jpg */,
+				E5D05E491C1861630084B92D /* head2.jpg */,
+				E5D05E4A1C1861630084B92D /* head3.jpg */,
+				E5D05E4B1C1861630084B92D /* head4.jpg */,
+				E5D05E4C1C1861630084B92D /* head5.jpg */,
+				E5D05E4D1C1861630084B92D /* head6.jpg */,
+				E5D05E4E1C1861630084B92D /* head7.jpg */,
+				E5D05E4F1C1861630084B92D /* head8.jpg */,
+				E5D05E501C1861630084B92D /* the_arrow.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,27 +514,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D05E611C1861630084B92D /* head4.jpg in Resources */,
 				E5D05E131C1809CB0084B92D /* playing_volumn_nosound_icon@2x.png in Resources */,
 				E5D05E021C1809CB0084B92D /* nowplaying@2x.png in Resources */,
 				E5D05DCC1C1809770084B92D /* 朴树-平凡之路.jpg in Resources */,
 				E5D05E1A1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon@2x.png in Resources */,
 				E5D05E0F1C1809CB0084B92D /* player_slider_playback_right@2x.png in Resources */,
+				E5D05E701C186B5C0084B92D /* 马頔 - 南山南.mp3 in Resources */,
 				E5D05E041C1809CB0084B92D /* nowplaying_section_bg@2x.png in Resources */,
+				E5D05E691C1861630084B92D /* Level2_Cell.xib in Resources */,
+				E5D05E661C1861630084B92D /* the_arrow.png in Resources */,
 				E5D05DB81C18095D0084B92D /* 童声-情非得已.lrc in Resources */,
+				E5D05E601C1861630084B92D /* head3.jpg in Resources */,
 				E5D05E091C1809CB0084B92D /* player_btn_pause_normal@2x.png in Resources */,
 				E5D05E011C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png in Resources */,
 				E5D05E0A1C1809CB0084B92D /* player_btn_play_highlight@2x.png in Resources */,
 				E5D05E081C1809CB0084B92D /* player_btn_pause_highlight@2x.png in Resources */,
+				E5D05E5C1C1861630084B92D /* contacts_collect@2x.png in Resources */,
 				E5D05DBB1C18095D0084B92D /* 林俊杰-背对背拥抱.mp3 in Resources */,
 				E5D05E0D1C1809CB0084B92D /* player_btn_pre_normal@2x.png in Resources */,
+				E5D05E5E1C1861630084B92D /* head1.jpg in Resources */,
 				E5D05E191C1809CB0084B92D /* playing_volumn_slide_sound_icon_h@2x.png in Resources */,
 				E5D05E111C1809CB0084B92D /* playing_bmwonboard_default.png in Resources */,
 				E5D05E1C1C1809CB0084B92D /* playing_volumn_slider_thumb@2x.png in Resources */,
+				E5D05E641C1861630084B92D /* head7.jpg in Resources */,
 				E5D05D901C1802B50084B92D /* LaunchScreen.storyboard in Resources */,
 				E5D05D8D1C1802B50084B92D /* Assets.xcassets in Resources */,
 				E5D05E0E1C1809CB0084B92D /* player_slider_playback_left@2x.png in Resources */,
 				E5D05E101C1809CB0084B92D /* player_slider_playback_thumb@2x.png in Resources */,
 				E5D05DCE1C1809770084B92D /* 梁静茹-偶阵雨.jpg in Resources */,
+				E5D05E671C1861630084B92D /* Level0_Cell.xib in Resources */,
 				E5D05E201C1809CB0084B92D /* random_pressed@2x.png in Resources */,
 				E5D05DD01C1809770084B92D /* 林俊杰.jpg in Resources */,
 				E5D05E031C1809CB0084B92D /* nowplaying_random@2x.png in Resources */,
@@ -437,6 +557,7 @@
 				E5D05E221C1809CB0084B92D /* recogniz_cd@2x.png in Resources */,
 				E5D05E071C1809CB0084B92D /* player_btn_next_normal@2x.png in Resources */,
 				E5D05E0C1C1809CB0084B92D /* player_btn_pre_highlight@2x.png in Resources */,
+				E5D05E6E1C1866230084B92D /* SettingVC.xib in Resources */,
 				E5D05E261C1822D10084B92D /* Qidong@2x.png in Resources */,
 				E5D05DCB1C1809770084B92D /* 小曲儿-于归.jpg in Resources */,
 				E5D05DD11C1809770084B92D /* resource.plist in Resources */,
@@ -444,11 +565,12 @@
 				E5D05D8B1C1802B50084B92D /* Main.storyboard in Resources */,
 				E5D05D9E1C1802CA0084B92D /* 红颜劫.jpg in Resources */,
 				E5D05DB71C18095D0084B92D /* 朴树-平凡之路.mp3 in Resources */,
-				E5D05E2B1C184BF40084B92D /* 实例音乐纯音乐版.mp3 in Resources */,
+				E5D05E321C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 in Resources */,
 				E5D05E161C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png in Resources */,
 				E5D05E1B1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png in Resources */,
 				E5D05DB51C18095D0084B92D /* 小曲儿-于归.mp3 in Resources */,
 				E5D05E141C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png in Resources */,
+				E5D05E5F1C1861630084B92D /* head2.jpg in Resources */,
 				E5D05DCF1C1809770084B92D /* 林俊杰-背对背拥抱.jpg in Resources */,
 				E5D05DCD1C1809770084B92D /* 童声-情非得已.jpg in Resources */,
 				E5D05E121C1809CB0084B92D /* playing_bmwonboard_default@2x.png in Resources */,
@@ -459,12 +581,17 @@
 				E5D05DBA1C18095D0084B92D /* 林俊杰-背对背拥抱.lrc in Resources */,
 				E5D05E1E1C1809CB0084B92D /* playing_volumn_sound_icon_h@2x.png in Resources */,
 				E5D05E001C1809CB0084B92D /* miniplayer_btn_playlist_highlight@2x.png in Resources */,
+				E5D05E651C1861630084B92D /* head8.jpg in Resources */,
 				E5D05E211C1809CB0084B92D /* recogniz_bg@2x.png in Resources */,
 				E5D05DBD1C18095D0084B92D /* 梁静茹-偶阵雨.mp3 in Resources */,
 				E5D05DFF1C1809CB0084B92D /* miniplayer_btn_playlist_disable@2x.png in Resources */,
+				E5D05E631C1861630084B92D /* head6.jpg in Resources */,
+				E5D05E621C1861630084B92D /* head5.jpg in Resources */,
 				E5D05DB41C18095D0084B92D /* 小曲儿-于归.lrc in Resources */,
 				E5D05D9F1C1802CA0084B92D /* 红颜劫.mp3 in Resources */,
 				E5D05E151C1809CB0084B92D /* playing_volumn_slide_bg@2x.png in Resources */,
+				E5D05E5D1C1861630084B92D /* contacts_major@2x.png in Resources */,
+				E5D05E681C1861630084B92D /* Level1_Cell.xib in Resources */,
 				E5D05DBC1C18095D0084B92D /* 梁静茹-偶阵雨.lrc in Resources */,
 				E5D05E0B1C1809CB0084B92D /* player_btn_play_normal@2x.png in Resources */,
 			);
@@ -477,12 +604,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D05E561C1861630084B92D /* CLTreeView_LEVEL1_Cell.m in Sources */,
+				E5D05E5B1C1861630084B92D /* CLTreeViewNode.m in Sources */,
+				E5D05E581C1861630084B92D /* CLTreeView_LEVEL2_Cell.m in Sources */,
 				E5D05E2F1C18523C0084B92D /* PlaySongListVC.m in Sources */,
 				E5D05D881C1802B50084B92D /* ViewController.m in Sources */,
 				E5D05DD51C1809A20084B92D /* Music.m in Sources */,
+				E5D05E5A1C1861630084B92D /* CLTreeViewController.m in Sources */,
+				E5D05E541C1861630084B92D /* CLTreeView_LEVEL0_Cell.m in Sources */,
+				E5D05E591C1861630084B92D /* CLTreeView_LEVEL2_Model.m in Sources */,
+				E5D05E571C1861630084B92D /* CLTreeView_LEVEL1_Model.m in Sources */,
 				E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */,
 				E5D05E291C183DE60084B92D /* Tool.m in Sources */,
 				E5D05D821C1802B50084B92D /* main.m in Sources */,
+				E5D05E6D1C1866230084B92D /* SettingVC.m in Sources */,
+				E5D05E551C1861630084B92D /* CLTreeView_LEVEL0_Model.m in Sources */,
 				E5D05DA91C1809520084B92D /* TAGPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -595,10 +731,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: fang taihu (AWS2B583LQ)";
 				INFOPLIST_FILE = PCIMPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PCIM.PCIMPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.sprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "22ca8b2a-4dfe-4cac-acfd-c89377cce741";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -606,10 +745,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: fang taihu (AWS2B583LQ)";
 				INFOPLIST_FILE = PCIMPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.PCIM.PCIMPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.sprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "22ca8b2a-4dfe-4cac-acfd-c89377cce741";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -632,6 +774,7 @@
 				E5D05D961C1802B50084B92D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

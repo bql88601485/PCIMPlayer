@@ -10,4 +10,6 @@
 
 @interface PlaySongListVC : UIViewController
 
++ (instancetype )shareSonglist;
+
 @end
