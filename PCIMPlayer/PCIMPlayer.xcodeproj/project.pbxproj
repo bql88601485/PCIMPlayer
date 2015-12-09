@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E5D05D821C1802B50084B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D811C1802B50084B92D /* main.m */; };
+		E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D841C1802B50084B92D /* AppDelegate.m */; };
+		E5D05D881C1802B50084B92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D871C1802B50084B92D /* ViewController.m */; };
+		E5D05D8B1C1802B50084B92D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D05D891C1802B50084B92D /* Main.storyboard */; };
+		E5D05D8D1C1802B50084B92D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D05D8C1C1802B50084B92D /* Assets.xcassets */; };
+		E5D05D901C1802B50084B92D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D05D8E1C1802B50084B92D /* LaunchScreen.storyboard */; };
+		E5D05D9E1C1802CA0084B92D /* 红颜劫.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05D9B1C1802CA0084B92D /* 红颜劫.jpg */; };
+		E5D05D9F1C1802CA0084B92D /* 红颜劫.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05D9C1C1802CA0084B92D /* 红颜劫.mp3 */; };
+		E5D05DA41C1802ED0084B92D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D05DA11C1802ED0084B92D /* Foundation.framework */; };
+		E5D05DA51C1802ED0084B92D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D05DA21C1802ED0084B92D /* CoreGraphics.framework */; };
+		E5D05DA61C1802ED0084B92D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D05DA31C1802ED0084B92D /* UIKit.framework */; };
+		E5D05DA91C1809520084B92D /* TAGPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05DA81C1809520084B92D /* TAGPlayer.m */; };
+		E5D05DB41C18095D0084B92D /* 小曲儿-于归.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DAA1C18095D0084B92D /* 小曲儿-于归.lrc */; };
+		E5D05DB51C18095D0084B92D /* 小曲儿-于归.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DAB1C18095D0084B92D /* 小曲儿-于归.mp3 */; };
+		E5D05DB61C18095D0084B92D /* 朴树-平凡之路.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DAC1C18095D0084B92D /* 朴树-平凡之路.lrc */; };
+		E5D05DB71C18095D0084B92D /* 朴树-平凡之路.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DAD1C18095D0084B92D /* 朴树-平凡之路.mp3 */; };
+		E5D05DB81C18095D0084B92D /* 童声-情非得已.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DAE1C18095D0084B92D /* 童声-情非得已.lrc */; };
+		E5D05DB91C18095D0084B92D /* 童声-情非得已.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DAF1C18095D0084B92D /* 童声-情非得已.mp3 */; };
+		E5D05DBA1C18095D0084B92D /* 林俊杰-背对背拥抱.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DB01C18095D0084B92D /* 林俊杰-背对背拥抱.lrc */; };
+		E5D05DBB1C18095D0084B92D /* 林俊杰-背对背拥抱.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DB11C18095D0084B92D /* 林俊杰-背对背拥抱.mp3 */; };
+		E5D05DBC1C18095D0084B92D /* 梁静茹-偶阵雨.lrc in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DB21C18095D0084B92D /* 梁静茹-偶阵雨.lrc */; };
+		E5D05DBD1C18095D0084B92D /* 梁静茹-偶阵雨.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DB31C18095D0084B92D /* 梁静茹-偶阵雨.mp3 */; };
+		E5D05DC11C18096B0084B92D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D05DBE1C18096B0084B92D /* Accelerate.framework */; };
+		E5D05DC21C18096B0084B92D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D05DBF1C18096B0084B92D /* CoreGraphics.framework */; };
+		E5D05DC31C18096B0084B92D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D05DC01C18096B0084B92D /* CoreImage.framework */; };
+		E5D05DCB1C1809770084B92D /* 小曲儿-于归.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DC41C1809770084B92D /* 小曲儿-于归.jpg */; };
+		E5D05DCC1C1809770084B92D /* 朴树-平凡之路.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DC51C1809770084B92D /* 朴树-平凡之路.jpg */; };
+		E5D05DCD1C1809770084B92D /* 童声-情非得已.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DC61C1809770084B92D /* 童声-情非得已.jpg */; };
+		E5D05DCE1C1809770084B92D /* 梁静茹-偶阵雨.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DC71C1809770084B92D /* 梁静茹-偶阵雨.jpg */; };
+		E5D05DCF1C1809770084B92D /* 林俊杰-背对背拥抱.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DC81C1809770084B92D /* 林俊杰-背对背拥抱.jpg */; };
+		E5D05DD01C1809770084B92D /* 林俊杰.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DC91C1809770084B92D /* 林俊杰.jpg */; };
+		E5D05DD11C1809770084B92D /* resource.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DCA1C1809770084B92D /* resource.plist */; };
+		E5D05DD51C1809A20084B92D /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05DD41C1809A20084B92D /* Music.m */; };
+		E5D05DFE1C1809CB0084B92D /* playTime.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DD71C1809CB0084B92D /* playTime.tiff */; };
+		E5D05DFF1C1809CB0084B92D /* miniplayer_btn_playlist_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DD81C1809CB0084B92D /* miniplayer_btn_playlist_disable@2x.png */; };
+		E5D05E001C1809CB0084B92D /* miniplayer_btn_playlist_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DD91C1809CB0084B92D /* miniplayer_btn_playlist_highlight@2x.png */; };
+		E5D05E011C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DDA1C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png */; };
+		E5D05E021C1809CB0084B92D /* nowplaying@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DDB1C1809CB0084B92D /* nowplaying@2x.png */; };
+		E5D05E031C1809CB0084B92D /* nowplaying_random@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DDC1C1809CB0084B92D /* nowplaying_random@2x.png */; };
+		E5D05E041C1809CB0084B92D /* nowplaying_section_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DDD1C1809CB0084B92D /* nowplaying_section_bg@2x.png */; };
+		E5D05E051C1809CB0084B92D /* nowplayingSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DDE1C1809CB0084B92D /* nowplayingSelected@2x.png */; };
+		E5D05E061C1809CB0084B92D /* player_btn_next_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DDF1C1809CB0084B92D /* player_btn_next_highlight@2x.png */; };
+		E5D05E071C1809CB0084B92D /* player_btn_next_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE01C1809CB0084B92D /* player_btn_next_normal@2x.png */; };
+		E5D05E081C1809CB0084B92D /* player_btn_pause_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE11C1809CB0084B92D /* player_btn_pause_highlight@2x.png */; };
+		E5D05E091C1809CB0084B92D /* player_btn_pause_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE21C1809CB0084B92D /* player_btn_pause_normal@2x.png */; };
+		E5D05E0A1C1809CB0084B92D /* player_btn_play_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE31C1809CB0084B92D /* player_btn_play_highlight@2x.png */; };
+		E5D05E0B1C1809CB0084B92D /* player_btn_play_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE41C1809CB0084B92D /* player_btn_play_normal@2x.png */; };
+		E5D05E0C1C1809CB0084B92D /* player_btn_pre_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE51C1809CB0084B92D /* player_btn_pre_highlight@2x.png */; };
+		E5D05E0D1C1809CB0084B92D /* player_btn_pre_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE61C1809CB0084B92D /* player_btn_pre_normal@2x.png */; };
+		E5D05E0E1C1809CB0084B92D /* player_slider_playback_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE71C1809CB0084B92D /* player_slider_playback_left@2x.png */; };
+		E5D05E0F1C1809CB0084B92D /* player_slider_playback_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE81C1809CB0084B92D /* player_slider_playback_right@2x.png */; };
+		E5D05E101C1809CB0084B92D /* player_slider_playback_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DE91C1809CB0084B92D /* player_slider_playback_thumb@2x.png */; };
+		E5D05E111C1809CB0084B92D /* playing_bmwonboard_default.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DEA1C1809CB0084B92D /* playing_bmwonboard_default.png */; };
+		E5D05E121C1809CB0084B92D /* playing_bmwonboard_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DEB1C1809CB0084B92D /* playing_bmwonboard_default@2x.png */; };
+		E5D05E131C1809CB0084B92D /* playing_volumn_nosound_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DEC1C1809CB0084B92D /* playing_volumn_nosound_icon@2x.png */; };
+		E5D05E141C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DED1C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png */; };
+		E5D05E151C1809CB0084B92D /* playing_volumn_slide_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DEE1C1809CB0084B92D /* playing_volumn_slide_bg@2x.png */; };
+		E5D05E161C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DEF1C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png */; };
+		E5D05E171C1809CB0084B92D /* playing_volumn_slide_foreground_ios6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF01C1809CB0084B92D /* playing_volumn_slide_foreground_ios6@2x.png */; };
+		E5D05E181C1809CB0084B92D /* playing_volumn_slide_sound_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF11C1809CB0084B92D /* playing_volumn_slide_sound_icon@2x.png */; };
+		E5D05E191C1809CB0084B92D /* playing_volumn_slide_sound_icon_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF21C1809CB0084B92D /* playing_volumn_slide_sound_icon_h@2x.png */; };
+		E5D05E1A1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF31C1809CB0084B92D /* playing_volumn_slide_sound_little_icon@2x.png */; };
+		E5D05E1B1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF41C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png */; };
+		E5D05E1C1C1809CB0084B92D /* playing_volumn_slider_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF51C1809CB0084B92D /* playing_volumn_slider_thumb@2x.png */; };
+		E5D05E1D1C1809CB0084B92D /* playing_volumn_sound_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF61C1809CB0084B92D /* playing_volumn_sound_icon@2x.png */; };
+		E5D05E1E1C1809CB0084B92D /* playing_volumn_sound_icon_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF71C1809CB0084B92D /* playing_volumn_sound_icon_h@2x.png */; };
+		E5D05E1F1C1809CB0084B92D /* random@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF81C1809CB0084B92D /* random@2x.png */; };
+		E5D05E201C1809CB0084B92D /* random_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DF91C1809CB0084B92D /* random_pressed@2x.png */; };
+		E5D05E211C1809CB0084B92D /* recogniz_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DFA1C1809CB0084B92D /* recogniz_bg@2x.png */; };
+		E5D05E221C1809CB0084B92D /* recogniz_cd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DFB1C1809CB0084B92D /* recogniz_cd@2x.png */; };
+		E5D05E231C1809CB0084B92D /* recogniz_listen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DFC1C1809CB0084B92D /* recogniz_listen@2x.png */; };
+		E5D05E241C1809CB0084B92D /* recogniz_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05DFD1C1809CB0084B92D /* recogniz_play@2x.png */; };
+		E5D05E261C1822D10084B92D /* Qidong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E251C1822D10084B92D /* Qidong@2x.png */; };
+		E5D05E291C183DE60084B92D /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E281C183DE60084B92D /* Tool.m */; };
+		E5D05E2B1C184BF40084B92D /* 实例音乐纯音乐版.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E2A1C184BF40084B92D /* 实例音乐纯音乐版.mp3 */; };
+		E5D05E2F1C18523C0084B92D /* PlaySongListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E2D1C18523C0084B92D /* PlaySongListVC.m */; };
+		E5D05E301C18523C0084B92D /* PlaySongListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E2E1C18523C0084B92D /* PlaySongListVC.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E5D05D7D1C1802B50084B92D /* PCIMPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCIMPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5D05D811C1802B50084B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E5D05D831C1802B50084B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E5D05D841C1802B50084B92D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E5D05D861C1802B50084B92D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E5D05D871C1802B50084B92D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E5D05D8A1C1802B50084B92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E5D05D8C1C1802B50084B92D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5D05D8F1C1802B50084B92D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E5D05D911C1802B50084B92D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5D05D9B1C1802CA0084B92D /* 红颜劫.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "红颜劫.jpg"; sourceTree = "<group>"; };
+		E5D05D9C1C1802CA0084B92D /* 红颜劫.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "红颜劫.mp3"; sourceTree = "<group>"; };
+		E5D05DA11C1802ED0084B92D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E5D05DA21C1802ED0084B92D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E5D05DA31C1802ED0084B92D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E5D05DA71C1809520084B92D /* TAGPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAGPlayer.h; sourceTree = "<group>"; };
+		E5D05DA81C1809520084B92D /* TAGPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAGPlayer.m; sourceTree = "<group>"; };
+		E5D05DAA1C18095D0084B92D /* 小曲儿-于归.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "小曲儿-于归.lrc"; sourceTree = "<group>"; };
+		E5D05DAB1C18095D0084B92D /* 小曲儿-于归.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "小曲儿-于归.mp3"; sourceTree = "<group>"; };
+		E5D05DAC1C18095D0084B92D /* 朴树-平凡之路.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "朴树-平凡之路.lrc"; sourceTree = "<group>"; };
+		E5D05DAD1C18095D0084B92D /* 朴树-平凡之路.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "朴树-平凡之路.mp3"; sourceTree = "<group>"; };
+		E5D05DAE1C18095D0084B92D /* 童声-情非得已.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "童声-情非得已.lrc"; sourceTree = "<group>"; };
+		E5D05DAF1C18095D0084B92D /* 童声-情非得已.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "童声-情非得已.mp3"; sourceTree = "<group>"; };
+		E5D05DB01C18095D0084B92D /* 林俊杰-背对背拥抱.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "林俊杰-背对背拥抱.lrc"; sourceTree = "<group>"; };
+		E5D05DB11C18095D0084B92D /* 林俊杰-背对背拥抱.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "林俊杰-背对背拥抱.mp3"; sourceTree = "<group>"; };
+		E5D05DB21C18095D0084B92D /* 梁静茹-偶阵雨.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "梁静茹-偶阵雨.lrc"; sourceTree = "<group>"; };
+		E5D05DB31C18095D0084B92D /* 梁静茹-偶阵雨.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "梁静茹-偶阵雨.mp3"; sourceTree = "<group>"; };
+		E5D05DBE1C18096B0084B92D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E5D05DBF1C18096B0084B92D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E5D05DC01C18096B0084B92D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E5D05DC41C1809770084B92D /* 小曲儿-于归.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "小曲儿-于归.jpg"; sourceTree = "<group>"; };
+		E5D05DC51C1809770084B92D /* 朴树-平凡之路.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "朴树-平凡之路.jpg"; sourceTree = "<group>"; };
+		E5D05DC61C1809770084B92D /* 童声-情非得已.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "童声-情非得已.jpg"; sourceTree = "<group>"; };
+		E5D05DC71C1809770084B92D /* 梁静茹-偶阵雨.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "梁静茹-偶阵雨.jpg"; sourceTree = "<group>"; };
+		E5D05DC81C1809770084B92D /* 林俊杰-背对背拥抱.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "林俊杰-背对背拥抱.jpg"; sourceTree = "<group>"; };
+		E5D05DC91C1809770084B92D /* 林俊杰.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "林俊杰.jpg"; sourceTree = "<group>"; };
+		E5D05DCA1C1809770084B92D /* resource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = resource.plist; sourceTree = "<group>"; };
+		E5D05DD31C1809A20084B92D /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		E5D05DD41C1809A20084B92D /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		E5D05DD71C1809CB0084B92D /* playTime.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = playTime.tiff; sourceTree = "<group>"; };
+		E5D05DD81C1809CB0084B92D /* miniplayer_btn_playlist_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miniplayer_btn_playlist_disable@2x.png"; sourceTree = "<group>"; };
+		E5D05DD91C1809CB0084B92D /* miniplayer_btn_playlist_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miniplayer_btn_playlist_highlight@2x.png"; sourceTree = "<group>"; };
+		E5D05DDA1C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miniplayer_btn_playlist_normal@2x.png"; sourceTree = "<group>"; };
+		E5D05DDB1C1809CB0084B92D /* nowplaying@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nowplaying@2x.png"; sourceTree = "<group>"; };
+		E5D05DDC1C1809CB0084B92D /* nowplaying_random@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nowplaying_random@2x.png"; sourceTree = "<group>"; };
+		E5D05DDD1C1809CB0084B92D /* nowplaying_section_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nowplaying_section_bg@2x.png"; sourceTree = "<group>"; };
+		E5D05DDE1C1809CB0084B92D /* nowplayingSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nowplayingSelected@2x.png"; sourceTree = "<group>"; };
+		E5D05DDF1C1809CB0084B92D /* player_btn_next_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_next_highlight@2x.png"; sourceTree = "<group>"; };
+		E5D05DE01C1809CB0084B92D /* player_btn_next_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_next_normal@2x.png"; sourceTree = "<group>"; };
+		E5D05DE11C1809CB0084B92D /* player_btn_pause_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_pause_highlight@2x.png"; sourceTree = "<group>"; };
+		E5D05DE21C1809CB0084B92D /* player_btn_pause_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_pause_normal@2x.png"; sourceTree = "<group>"; };
+		E5D05DE31C1809CB0084B92D /* player_btn_play_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_play_highlight@2x.png"; sourceTree = "<group>"; };
+		E5D05DE41C1809CB0084B92D /* player_btn_play_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_play_normal@2x.png"; sourceTree = "<group>"; };
+		E5D05DE51C1809CB0084B92D /* player_btn_pre_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_pre_highlight@2x.png"; sourceTree = "<group>"; };
+		E5D05DE61C1809CB0084B92D /* player_btn_pre_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_btn_pre_normal@2x.png"; sourceTree = "<group>"; };
+		E5D05DE71C1809CB0084B92D /* player_slider_playback_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_slider_playback_left@2x.png"; sourceTree = "<group>"; };
+		E5D05DE81C1809CB0084B92D /* player_slider_playback_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_slider_playback_right@2x.png"; sourceTree = "<group>"; };
+		E5D05DE91C1809CB0084B92D /* player_slider_playback_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "player_slider_playback_thumb@2x.png"; sourceTree = "<group>"; };
+		E5D05DEA1C1809CB0084B92D /* playing_bmwonboard_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playing_bmwonboard_default.png; sourceTree = "<group>"; };
+		E5D05DEB1C1809CB0084B92D /* playing_bmwonboard_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_bmwonboard_default@2x.png"; sourceTree = "<group>"; };
+		E5D05DEC1C1809CB0084B92D /* playing_volumn_nosound_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_nosound_icon@2x.png"; sourceTree = "<group>"; };
+		E5D05DED1C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_nosound_icon_h@2x.png"; sourceTree = "<group>"; };
+		E5D05DEE1C1809CB0084B92D /* playing_volumn_slide_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_bg@2x.png"; sourceTree = "<group>"; };
+		E5D05DEF1C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_bg_ios6@2x.png"; sourceTree = "<group>"; };
+		E5D05DF01C1809CB0084B92D /* playing_volumn_slide_foreground_ios6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_foreground_ios6@2x.png"; sourceTree = "<group>"; };
+		E5D05DF11C1809CB0084B92D /* playing_volumn_slide_sound_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_sound_icon@2x.png"; sourceTree = "<group>"; };
+		E5D05DF21C1809CB0084B92D /* playing_volumn_slide_sound_icon_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_sound_icon_h@2x.png"; sourceTree = "<group>"; };
+		E5D05DF31C1809CB0084B92D /* playing_volumn_slide_sound_little_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_sound_little_icon@2x.png"; sourceTree = "<group>"; };
+		E5D05DF41C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slide_sound_little_icon_h@2x.png"; sourceTree = "<group>"; };
+		E5D05DF51C1809CB0084B92D /* playing_volumn_slider_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_slider_thumb@2x.png"; sourceTree = "<group>"; };
+		E5D05DF61C1809CB0084B92D /* playing_volumn_sound_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_sound_icon@2x.png"; sourceTree = "<group>"; };
+		E5D05DF71C1809CB0084B92D /* playing_volumn_sound_icon_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playing_volumn_sound_icon_h@2x.png"; sourceTree = "<group>"; };
+		E5D05DF81C1809CB0084B92D /* random@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "random@2x.png"; sourceTree = "<group>"; };
+		E5D05DF91C1809CB0084B92D /* random_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "random_pressed@2x.png"; sourceTree = "<group>"; };
+		E5D05DFA1C1809CB0084B92D /* recogniz_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recogniz_bg@2x.png"; sourceTree = "<group>"; };
+		E5D05DFB1C1809CB0084B92D /* recogniz_cd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recogniz_cd@2x.png"; sourceTree = "<group>"; };
+		E5D05DFC1C1809CB0084B92D /* recogniz_listen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recogniz_listen@2x.png"; sourceTree = "<group>"; };
+		E5D05DFD1C1809CB0084B92D /* recogniz_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recogniz_play@2x.png"; sourceTree = "<group>"; };
+		E5D05E251C1822D10084B92D /* Qidong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Qidong@2x.png"; sourceTree = "<group>"; };
+		E5D05E271C183DE60084B92D /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		E5D05E281C183DE60084B92D /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		E5D05E2A1C184BF40084B92D /* 实例音乐纯音乐版.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "实例音乐纯音乐版.mp3"; sourceTree = "<group>"; };
+		E5D05E2C1C18523C0084B92D /* PlaySongListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaySongListVC.h; sourceTree = "<group>"; };
+		E5D05E2D1C18523C0084B92D /* PlaySongListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaySongListVC.m; sourceTree = "<group>"; };
+		E5D05E2E1C18523C0084B92D /* PlaySongListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaySongListVC.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5D05D7A1C1802B50084B92D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D05DA51C1802ED0084B92D /* CoreGraphics.framework in Frameworks */,
+				E5D05DC11C18096B0084B92D /* Accelerate.framework in Frameworks */,
+				E5D05DA61C1802ED0084B92D /* UIKit.framework in Frameworks */,
+				E5D05DC21C18096B0084B92D /* CoreGraphics.framework in Frameworks */,
+				E5D05DA41C1802ED0084B92D /* Foundation.framework in Frameworks */,
+				E5D05DC31C18096B0084B92D /* CoreImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E5D05D741C1802B50084B92D = {
+			isa = PBXGroup;
+			children = (
+				E5D05D7F1C1802B50084B92D /* PCIMPlayer */,
+				E5D05D7E1C1802B50084B92D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5D05D7E1C1802B50084B92D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05D7D1C1802B50084B92D /* PCIMPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5D05D7F1C1802B50084B92D /* PCIMPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05DD61C1809C30084B92D /* Icon */,
+				E5D05DD21C18099B0084B92D /* Model */,
+				E5D05D971C1802CA0084B92D /* Music */,
+				E5D05D9A1C1802CA0084B92D /* resour */,
+				E5D05D831C1802B50084B92D /* AppDelegate.h */,
+				E5D05D841C1802B50084B92D /* AppDelegate.m */,
+				E5D05D861C1802B50084B92D /* ViewController.h */,
+				E5D05D871C1802B50084B92D /* ViewController.m */,
+				E5D05E2C1C18523C0084B92D /* PlaySongListVC.h */,
+				E5D05E2D1C18523C0084B92D /* PlaySongListVC.m */,
+				E5D05E2E1C18523C0084B92D /* PlaySongListVC.xib */,
+				E5D05D891C1802B50084B92D /* Main.storyboard */,
+				E5D05D8C1C1802B50084B92D /* Assets.xcassets */,
+				E5D05D8E1C1802B50084B92D /* LaunchScreen.storyboard */,
+				E5D05D911C1802B50084B92D /* Info.plist */,
+				E5D05DA01C1802D60084B92D /* Frameworks */,
+				E5D05D801C1802B50084B92D /* Supporting Files */,
+			);
+			path = PCIMPlayer;
+			sourceTree = "<group>";
+		};
+		E5D05D801C1802B50084B92D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05D811C1802B50084B92D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5D05D971C1802CA0084B92D /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05E271C183DE60084B92D /* Tool.h */,
+				E5D05E281C183DE60084B92D /* Tool.m */,
+				E5D05DA71C1809520084B92D /* TAGPlayer.h */,
+				E5D05DA81C1809520084B92D /* TAGPlayer.m */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		E5D05D9A1C1802CA0084B92D /* resour */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05E2A1C184BF40084B92D /* 实例音乐纯音乐版.mp3 */,
+				E5D05E251C1822D10084B92D /* Qidong@2x.png */,
+				E5D05DC41C1809770084B92D /* 小曲儿-于归.jpg */,
+				E5D05DC51C1809770084B92D /* 朴树-平凡之路.jpg */,
+				E5D05DC61C1809770084B92D /* 童声-情非得已.jpg */,
+				E5D05DC71C1809770084B92D /* 梁静茹-偶阵雨.jpg */,
+				E5D05DC81C1809770084B92D /* 林俊杰-背对背拥抱.jpg */,
+				E5D05DC91C1809770084B92D /* 林俊杰.jpg */,
+				E5D05DCA1C1809770084B92D /* resource.plist */,
+				E5D05DAA1C18095D0084B92D /* 小曲儿-于归.lrc */,
+				E5D05DAB1C18095D0084B92D /* 小曲儿-于归.mp3 */,
+				E5D05DAC1C18095D0084B92D /* 朴树-平凡之路.lrc */,
+				E5D05DAD1C18095D0084B92D /* 朴树-平凡之路.mp3 */,
+				E5D05DAE1C18095D0084B92D /* 童声-情非得已.lrc */,
+				E5D05DAF1C18095D0084B92D /* 童声-情非得已.mp3 */,
+				E5D05DB01C18095D0084B92D /* 林俊杰-背对背拥抱.lrc */,
+				E5D05DB11C18095D0084B92D /* 林俊杰-背对背拥抱.mp3 */,
+				E5D05DB21C18095D0084B92D /* 梁静茹-偶阵雨.lrc */,
+				E5D05DB31C18095D0084B92D /* 梁静茹-偶阵雨.mp3 */,
+				E5D05D9B1C1802CA0084B92D /* 红颜劫.jpg */,
+				E5D05D9C1C1802CA0084B92D /* 红颜劫.mp3 */,
+			);
+			path = resour;
+			sourceTree = "<group>";
+		};
+		E5D05DA01C1802D60084B92D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05DBE1C18096B0084B92D /* Accelerate.framework */,
+				E5D05DBF1C18096B0084B92D /* CoreGraphics.framework */,
+				E5D05DC01C18096B0084B92D /* CoreImage.framework */,
+				E5D05DA11C1802ED0084B92D /* Foundation.framework */,
+				E5D05DA21C1802ED0084B92D /* CoreGraphics.framework */,
+				E5D05DA31C1802ED0084B92D /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5D05DD21C18099B0084B92D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05DD31C1809A20084B92D /* Music.h */,
+				E5D05DD41C1809A20084B92D /* Music.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5D05DD61C1809C30084B92D /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				E5D05DD71C1809CB0084B92D /* playTime.tiff */,
+				E5D05DD81C1809CB0084B92D /* miniplayer_btn_playlist_disable@2x.png */,
+				E5D05DD91C1809CB0084B92D /* miniplayer_btn_playlist_highlight@2x.png */,
+				E5D05DDA1C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png */,
+				E5D05DDB1C1809CB0084B92D /* nowplaying@2x.png */,
+				E5D05DDC1C1809CB0084B92D /* nowplaying_random@2x.png */,
+				E5D05DDD1C1809CB0084B92D /* nowplaying_section_bg@2x.png */,
+				E5D05DDE1C1809CB0084B92D /* nowplayingSelected@2x.png */,
+				E5D05DDF1C1809CB0084B92D /* player_btn_next_highlight@2x.png */,
+				E5D05DE01C1809CB0084B92D /* player_btn_next_normal@2x.png */,
+				E5D05DE11C1809CB0084B92D /* player_btn_pause_highlight@2x.png */,
+				E5D05DE21C1809CB0084B92D /* player_btn_pause_normal@2x.png */,
+				E5D05DE31C1809CB0084B92D /* player_btn_play_highlight@2x.png */,
+				E5D05DE41C1809CB0084B92D /* player_btn_play_normal@2x.png */,
+				E5D05DE51C1809CB0084B92D /* player_btn_pre_highlight@2x.png */,
+				E5D05DE61C1809CB0084B92D /* player_btn_pre_normal@2x.png */,
+				E5D05DE71C1809CB0084B92D /* player_slider_playback_left@2x.png */,
+				E5D05DE81C1809CB0084B92D /* player_slider_playback_right@2x.png */,
+				E5D05DE91C1809CB0084B92D /* player_slider_playback_thumb@2x.png */,
+				E5D05DEA1C1809CB0084B92D /* playing_bmwonboard_default.png */,
+				E5D05DEB1C1809CB0084B92D /* playing_bmwonboard_default@2x.png */,
+				E5D05DEC1C1809CB0084B92D /* playing_volumn_nosound_icon@2x.png */,
+				E5D05DED1C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png */,
+				E5D05DEE1C1809CB0084B92D /* playing_volumn_slide_bg@2x.png */,
+				E5D05DEF1C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png */,
+				E5D05DF01C1809CB0084B92D /* playing_volumn_slide_foreground_ios6@2x.png */,
+				E5D05DF11C1809CB0084B92D /* playing_volumn_slide_sound_icon@2x.png */,
+				E5D05DF21C1809CB0084B92D /* playing_volumn_slide_sound_icon_h@2x.png */,
+				E5D05DF31C1809CB0084B92D /* playing_volumn_slide_sound_little_icon@2x.png */,
+				E5D05DF41C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png */,
+				E5D05DF51C1809CB0084B92D /* playing_volumn_slider_thumb@2x.png */,
+				E5D05DF61C1809CB0084B92D /* playing_volumn_sound_icon@2x.png */,
+				E5D05DF71C1809CB0084B92D /* playing_volumn_sound_icon_h@2x.png */,
+				E5D05DF81C1809CB0084B92D /* random@2x.png */,
+				E5D05DF91C1809CB0084B92D /* random_pressed@2x.png */,
+				E5D05DFA1C1809CB0084B92D /* recogniz_bg@2x.png */,
+				E5D05DFB1C1809CB0084B92D /* recogniz_cd@2x.png */,
+				E5D05DFC1C1809CB0084B92D /* recogniz_listen@2x.png */,
+				E5D05DFD1C1809CB0084B92D /* recogniz_play@2x.png */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5D05D7C1C1802B50084B92D /* PCIMPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5D05D941C1802B50084B92D /* Build configuration list for PBXNativeTarget "PCIMPlayer" */;
+			buildPhases = (
+				E5D05D791C1802B50084B92D /* Sources */,
+				E5D05D7A1C1802B50084B92D /* Frameworks */,
+				E5D05D7B1C1802B50084B92D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PCIMPlayer;
+			productName = PCIMPlayer;
+			productReference = E5D05D7D1C1802B50084B92D /* PCIMPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5D05D751C1802B50084B92D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = PCIMPlayer;
+				TargetAttributes = {
+					E5D05D7C1C1802B50084B92D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = E5D05D781C1802B50084B92D /* Build configuration list for PBXProject "PCIMPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5D05D741C1802B50084B92D;
+			productRefGroup = E5D05D7E1C1802B50084B92D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5D05D7C1C1802B50084B92D /* PCIMPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5D05D7B1C1802B50084B92D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D05E131C1809CB0084B92D /* playing_volumn_nosound_icon@2x.png in Resources */,
+				E5D05E021C1809CB0084B92D /* nowplaying@2x.png in Resources */,
+				E5D05DCC1C1809770084B92D /* 朴树-平凡之路.jpg in Resources */,
+				E5D05E1A1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon@2x.png in Resources */,
+				E5D05E0F1C1809CB0084B92D /* player_slider_playback_right@2x.png in Resources */,
+				E5D05E041C1809CB0084B92D /* nowplaying_section_bg@2x.png in Resources */,
+				E5D05DB81C18095D0084B92D /* 童声-情非得已.lrc in Resources */,
+				E5D05E091C1809CB0084B92D /* player_btn_pause_normal@2x.png in Resources */,
+				E5D05E011C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png in Resources */,
+				E5D05E0A1C1809CB0084B92D /* player_btn_play_highlight@2x.png in Resources */,
+				E5D05E081C1809CB0084B92D /* player_btn_pause_highlight@2x.png in Resources */,
+				E5D05DBB1C18095D0084B92D /* 林俊杰-背对背拥抱.mp3 in Resources */,
+				E5D05E0D1C1809CB0084B92D /* player_btn_pre_normal@2x.png in Resources */,
+				E5D05E191C1809CB0084B92D /* playing_volumn_slide_sound_icon_h@2x.png in Resources */,
+				E5D05E111C1809CB0084B92D /* playing_bmwonboard_default.png in Resources */,
+				E5D05E1C1C1809CB0084B92D /* playing_volumn_slider_thumb@2x.png in Resources */,
+				E5D05D901C1802B50084B92D /* LaunchScreen.storyboard in Resources */,
+				E5D05D8D1C1802B50084B92D /* Assets.xcassets in Resources */,
+				E5D05E0E1C1809CB0084B92D /* player_slider_playback_left@2x.png in Resources */,
+				E5D05E101C1809CB0084B92D /* player_slider_playback_thumb@2x.png in Resources */,
+				E5D05DCE1C1809770084B92D /* 梁静茹-偶阵雨.jpg in Resources */,
+				E5D05E201C1809CB0084B92D /* random_pressed@2x.png in Resources */,
+				E5D05DD01C1809770084B92D /* 林俊杰.jpg in Resources */,
+				E5D05E031C1809CB0084B92D /* nowplaying_random@2x.png in Resources */,
+				E5D05E051C1809CB0084B92D /* nowplayingSelected@2x.png in Resources */,
+				E5D05DB61C18095D0084B92D /* 朴树-平凡之路.lrc in Resources */,
+				E5D05E241C1809CB0084B92D /* recogniz_play@2x.png in Resources */,
+				E5D05E181C1809CB0084B92D /* playing_volumn_slide_sound_icon@2x.png in Resources */,
+				E5D05DFE1C1809CB0084B92D /* playTime.tiff in Resources */,
+				E5D05DB91C18095D0084B92D /* 童声-情非得已.mp3 in Resources */,
+				E5D05E061C1809CB0084B92D /* player_btn_next_highlight@2x.png in Resources */,
+				E5D05E221C1809CB0084B92D /* recogniz_cd@2x.png in Resources */,
+				E5D05E071C1809CB0084B92D /* player_btn_next_normal@2x.png in Resources */,
+				E5D05E0C1C1809CB0084B92D /* player_btn_pre_highlight@2x.png in Resources */,
+				E5D05E261C1822D10084B92D /* Qidong@2x.png in Resources */,
+				E5D05DCB1C1809770084B92D /* 小曲儿-于归.jpg in Resources */,
+				E5D05DD11C1809770084B92D /* resource.plist in Resources */,
+				E5D05E301C18523C0084B92D /* PlaySongListVC.xib in Resources */,
+				E5D05D8B1C1802B50084B92D /* Main.storyboard in Resources */,
+				E5D05D9E1C1802CA0084B92D /* 红颜劫.jpg in Resources */,
+				E5D05DB71C18095D0084B92D /* 朴树-平凡之路.mp3 in Resources */,
+				E5D05E2B1C184BF40084B92D /* 实例音乐纯音乐版.mp3 in Resources */,
+				E5D05E161C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png in Resources */,
+				E5D05E1B1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png in Resources */,
+				E5D05DB51C18095D0084B92D /* 小曲儿-于归.mp3 in Resources */,
+				E5D05E141C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png in Resources */,
+				E5D05DCF1C1809770084B92D /* 林俊杰-背对背拥抱.jpg in Resources */,
+				E5D05DCD1C1809770084B92D /* 童声-情非得已.jpg in Resources */,
+				E5D05E121C1809CB0084B92D /* playing_bmwonboard_default@2x.png in Resources */,
+				E5D05E1F1C1809CB0084B92D /* random@2x.png in Resources */,
+				E5D05E231C1809CB0084B92D /* recogniz_listen@2x.png in Resources */,
+				E5D05E171C1809CB0084B92D /* playing_volumn_slide_foreground_ios6@2x.png in Resources */,
+				E5D05E1D1C1809CB0084B92D /* playing_volumn_sound_icon@2x.png in Resources */,
+				E5D05DBA1C18095D0084B92D /* 林俊杰-背对背拥抱.lrc in Resources */,
+				E5D05E1E1C1809CB0084B92D /* playing_volumn_sound_icon_h@2x.png in Resources */,
+				E5D05E001C1809CB0084B92D /* miniplayer_btn_playlist_highlight@2x.png in Resources */,
+				E5D05E211C1809CB0084B92D /* recogniz_bg@2x.png in Resources */,
+				E5D05DBD1C18095D0084B92D /* 梁静茹-偶阵雨.mp3 in Resources */,
+				E5D05DFF1C1809CB0084B92D /* miniplayer_btn_playlist_disable@2x.png in Resources */,
+				E5D05DB41C18095D0084B92D /* 小曲儿-于归.lrc in Resources */,
+				E5D05D9F1C1802CA0084B92D /* 红颜劫.mp3 in Resources */,
+				E5D05E151C1809CB0084B92D /* playing_volumn_slide_bg@2x.png in Resources */,
+				E5D05DBC1C18095D0084B92D /* 梁静茹-偶阵雨.lrc in Resources */,
+				E5D05E0B1C1809CB0084B92D /* player_btn_play_normal@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5D05D791C1802B50084B92D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5D05E2F1C18523C0084B92D /* PlaySongListVC.m in Sources */,
+				E5D05D881C1802B50084B92D /* ViewController.m in Sources */,
+				E5D05DD51C1809A20084B92D /* Music.m in Sources */,
+				E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */,
+				E5D05E291C183DE60084B92D /* Tool.m in Sources */,
+				E5D05D821C1802B50084B92D /* main.m in Sources */,
+				E5D05DA91C1809520084B92D /* TAGPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E5D05D891C1802B50084B92D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5D05D8A1C1802B50084B92D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E5D05D8E1C1802B50084B92D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E5D05D8F1C1802B50084B92D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E5D05D921C1802B50084B92D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E5D05D931C1802B50084B92D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E5D05D951C1802B50084B92D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PCIMPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PCIM.PCIMPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E5D05D961C1802B50084B92D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PCIMPlayer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PCIM.PCIMPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5D05D781C1802B50084B92D /* Build configuration list for PBXProject "PCIMPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5D05D921C1802B50084B92D /* Debug */,
+				E5D05D931C1802B50084B92D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5D05D941C1802B50084B92D /* Build configuration list for PBXNativeTarget "PCIMPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5D05D951C1802B50084B92D /* Debug */,
+				E5D05D961C1802B50084B92D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5D05D751C1802B50084B92D /* Project object */;
+}
