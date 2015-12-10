@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E536C0371C19A9DD00398360 /* RCToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = E536C0361C19A9DD00398360 /* RCToastView.m */; };
 		E5D05D821C1802B50084B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D811C1802B50084B92D /* main.m */; };
 		E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D841C1802B50084B92D /* AppDelegate.m */; };
 		E5D05D881C1802B50084B92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D871C1802B50084B92D /* ViewController.m */; };
@@ -84,6 +85,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E536C0351C19A9DD00398360 /* RCToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCToastView.h; sourceTree = "<group>"; };
+		E536C0361C19A9DD00398360 /* RCToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCToastView.m; sourceTree = "<group>"; };
 		E5D05D7D1C1802B50084B92D /* PCIMPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCIMPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D05D811C1802B50084B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5D05D831C1802B50084B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 		E5D05DD21C18099B0084B92D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E536C0351C19A9DD00398360 /* RCToastView.h */,
+				E536C0361C19A9DD00398360 /* RCToastView.m */,
 				E5D05DD31C1809A20084B92D /* Music.h */,
 				E5D05DD41C1809A20084B92D /* Music.m */,
 			);
@@ -504,6 +509,7 @@
 				E5D05E571C1861630084B92D /* CLTreeView_LEVEL1_Model.m in Sources */,
 				E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */,
 				E5D05E291C183DE60084B92D /* Tool.m in Sources */,
+				E536C0371C19A9DD00398360 /* RCToastView.m in Sources */,
 				E5D05D821C1802B50084B92D /* main.m in Sources */,
 				E5D05E6D1C1866230084B92D /* SettingVC.m in Sources */,
 				E5D05E551C1861630084B92D /* CLTreeView_LEVEL0_Model.m in Sources */,

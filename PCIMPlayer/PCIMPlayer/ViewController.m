@@ -53,10 +53,9 @@
     
     self.player.play_Button = self.playButton;
     
-    IMP_WEAK_SELF(ViewController);
     self.player.ktouchEvent = ^(TAGPlayerStatus status){
     
-        [weak_self playTmpSong:nil];
+        [Tool getNextSongName];
     
     };
 }
@@ -105,7 +104,7 @@
                 break;
             case UIEventSubtypeRemoteControlNextTrack:
             {
-                [self playTmpSong:nil];
+                [Tool getNextSongName];
             }
                 break;
             case UIEventSubtypeRemoteControlPreviousTrack:
@@ -181,6 +180,7 @@
 //下一首
 - (IBAction)NextButton:(id)sender {
     
+    [Tool getNextSongName];
     
 }
 //播放或者暂停

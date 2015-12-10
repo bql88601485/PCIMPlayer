@@ -9,14 +9,10 @@
 #import "PlaySongListVC.h"
 #import "CLTree.h"
 #import "Tool.h"
+#import "RCToastView.h"
 static PlaySongListVC *stataicSelf = nil;
 
 @interface PlaySongListVC ()<UITableViewDataSource,UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableview;
-
-@property(strong,nonatomic) NSMutableArray* dataArray; //保存全部数据的数组
-@property(strong,nonatomic) NSArray *displayArray;   //保存要显示在界面上的数据的数组
 
 
 @end
@@ -28,6 +24,7 @@ static PlaySongListVC *stataicSelf = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         stataicSelf = [[PlaySongListVC alloc] initWithNibName:@"PlaySongListVC" bundle:nil];
+        stataicSelf.selectPath = nil;
     });
     return stataicSelf;
 }
@@ -188,7 +185,13 @@ static PlaySongListVC *stataicSelf = nil;
     
     //最后一个入住
     if (node1Array && node1 && node2Array && node0) {
+        
+        CLTreeView_LEVEL1_Model *tmp1 =[[CLTreeView_LEVEL1_Model alloc]init];
+        tmp1.name = topTwoStr;
+        tmp1.sonCnt = [NSString stringWithFormat:@"%zd",node2Array.count];
+        node1.nodeData = tmp1;
         node1.sonNodes = node2Array;
+        
         [node1Array addObject:node1];
         node0.sonNodes = node1Array;
         [_dataArray addObject:node0];
@@ -203,6 +206,7 @@ static PlaySongListVC *stataicSelf = nil;
     
     [self addTestData];//添加演示数据
     [self reloadDataForDisplayArray];//初始化将要显示的数据
+    [self reloadAllYINYUE];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -322,19 +326,23 @@ static PlaySongListVC *stataicSelf = nil;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CLTreeViewNode *node = [_displayArray objectAtIndex:indexPath.row];
+
     [self reloadDataForDisplayArrayChangeAt:indexPath.row];//修改cell的状态(关闭或打开)
+
     if(node.type == 2){
         //处理叶子节点选中，此处需要自定义
         
-        CLTreeView_LEVEL2_Model *model = (id )node.nodeData;
+        _songObjct = (id )node.nodeData;
         
-        NSString *path = [NSString stringWithFormat:@"%@/%@/%@",model.topName,model.signture,model.name];
+        NSString *path = [NSString stringWithFormat:@"%@/%@/%@",_songObjct.topName,_songObjct.signture,_songObjct.name];
         
         if (_kchangeSong) {
             
+            _selectPath = [NSIndexPath indexPathForRow:indexPath.row inSection:0];
+            
             [self goBack:nil];
             path = [Tool  getPlayName:path];
-            self.kchangeSong(model.name,path);
+            self.kchangeSong(_songObjct.name,path);
         }
     }
     else{
@@ -407,8 +415,50 @@ static PlaySongListVC *stataicSelf = nil;
             }
         }
     }
-    _displayArray = [NSArray arrayWithArray:tmp];
-    [self.tableview reloadData];
+    
+    int cha = (int )(_displayArray.count) - (int) (tmp.count);
+    
+    if (_selectPath && _songObjct) {
+        
+        for (id object in tmp) {
+            if (_songObjct == object) {
+                
+                if (row < _selectPath.row) {
+                    _selectPath = [NSIndexPath indexPathForRow:_selectPath.row - cha inSection:0];
+                }
+                
+                _displayArray = [NSArray arrayWithArray:tmp];
+                [self.tableview reloadData];
+                
+                return;
+            }
+        }
+        
+        ToastViewMessage(@"正在播放,不能关闭");
+        
+    }else{
+    
+        if (row < _selectPath.row) {
+            _selectPath = [NSIndexPath indexPathForRow:_selectPath.row - cha inSection:0];
+        }
+        
+        _displayArray = [NSArray arrayWithArray:tmp];
+        [self.tableview reloadData];
+    }
+}
+
+- (void)reloadAllYINYUE{
+    NSMutableArray *tmp = [[NSMutableArray alloc] init];
+    for (CLTreeViewNode *node in _dataArray) {
+        [tmp addObject:node];
+        for(CLTreeViewNode *node2 in node.sonNodes){
+            [tmp addObject:node2];
+            for(CLTreeViewNode *node3 in node2.sonNodes){
+                [tmp addObject:node3];
+            }
+        }
+    }
+    _alldisplayArray = [NSArray arrayWithArray:tmp];
 }
 
 @end

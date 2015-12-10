@@ -7,7 +7,8 @@
 //
 
 #import "Tool.h"
-
+#import "PlaySongListVC.h"
+#import "CLTree.h"
 @implementation Tool
 +(void)ImageHandleWithImageView:(UIImageView *)imageView andImageName:(NSString *)imageName
 {
@@ -125,6 +126,43 @@
     NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fileDirectory error:nil];
     
     return files;
+}
+
+
+
++ (NSString *)getNextSongName{
+    
+    
+    NSString *name = nil;
+    
+    PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
+    
+    if (YES) {
+        
+        NSInteger row = songlist.selectPath.row+1;
+        if (row >= songlist.displayArray.count) {
+            row = 0;
+        }
+        CLTreeViewNode *node = [songlist.displayArray objectAtIndex:row];
+        
+        if (node.nodeLevel == 0) {//下一个是首页//需要打开
+            [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            row++;
+            [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            row++;
+        }else if(node.nodeLevel == 1){
+            [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            row++;
+        }
+        [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+    }
+
+    return name;
+}
+
++ (NSString *)getUpSongName{
+
+    return @"";
 }
 
 @end

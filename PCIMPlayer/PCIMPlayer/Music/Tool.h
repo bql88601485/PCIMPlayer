@@ -24,4 +24,8 @@
 
 + (NSString *)getPlayName:(NSString *)songName;
 
+
++ (NSString *)getNextSongName;
+
++ (NSString *)getUpSongName;
 @end
