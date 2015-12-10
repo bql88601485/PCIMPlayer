@@ -190,7 +190,6 @@
 }
 //上一首
 - (IBAction)upButtonEvent:(id)sender {
-    
-    
+    [Tool getUpSongName];
 }
 @end

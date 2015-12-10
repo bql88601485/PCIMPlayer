@@ -176,7 +176,7 @@ static PlaySongListVC *stataicSelf = nil;
             tmp9.headImgPath = @"Qidong.png";
             tmp9.headImgUrl = nil;
             node2.nodeData = tmp9;
-            
+            node2.name = topThreeStr;
             [node2Array addObject:node2];
         }
     }
@@ -206,7 +206,7 @@ static PlaySongListVC *stataicSelf = nil;
     
     [self addTestData];//添加演示数据
     [self reloadDataForDisplayArray];//初始化将要显示的数据
-    [self reloadAllYINYUE];
+//    [self reloadAllYINYUE];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -327,14 +327,16 @@ static PlaySongListVC *stataicSelf = nil;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CLTreeViewNode *node = [_displayArray objectAtIndex:indexPath.row];
 
-    [self reloadDataForDisplayArrayChangeAt:indexPath.row];//修改cell的状态(关闭或打开)
-
+    BOOL yy = [self reloadDataForDisplayArrayChangeAt:indexPath.row];//修改cell的状态(关闭或打开)
+    if (!yy) {
+        return;
+    }
     if(node.type == 2){
         //处理叶子节点选中，此处需要自定义
+        CLTreeView_LEVEL2_Model *objec = (id )node.nodeData;
+        _songObjct = (id )node;
         
-        _songObjct = (id )node.nodeData;
-        
-        NSString *path = [NSString stringWithFormat:@"%@/%@/%@",_songObjct.topName,_songObjct.signture,_songObjct.name];
+        NSString *path = [NSString stringWithFormat:@"%@/%@/%@",objec.topName,objec.signture,objec.name];
         
         if (_kchangeSong) {
             
@@ -342,7 +344,7 @@ static PlaySongListVC *stataicSelf = nil;
             
             [self goBack:nil];
             path = [Tool  getPlayName:path];
-            self.kchangeSong(_songObjct.name,path);
+            self.kchangeSong(objec.name,path);
         }
     }
     else{
@@ -390,7 +392,7 @@ static PlaySongListVC *stataicSelf = nil;
 /*---------------------------------------
  修改cell的状态(关闭或打开)
  --------------------------------------- */
--(void) reloadDataForDisplayArrayChangeAt:(NSInteger)row{
+-(BOOL ) reloadDataForDisplayArrayChangeAt:(NSInteger)row{
     NSMutableArray *tmp = [[NSMutableArray alloc]init];
     NSInteger cnt=0;
     for (CLTreeViewNode *node in _dataArray) {
@@ -403,6 +405,15 @@ static PlaySongListVC *stataicSelf = nil;
             for(CLTreeViewNode *node2 in node.sonNodes){
                 [tmp addObject:node2];
                 if(cnt == row){
+                    if (_songObjct) {
+                        for(CLTreeViewNode *nodeTmp in node2.sonNodes){
+                            if ([nodeTmp.name isEqualToString:_songObjct.name]) {
+                                ToastViewMessage(@"正在播放，暂时不能合并");
+                                return NO;
+                            }
+                        }
+                    }
+                    
                     node2.isExpanded = !node2.isExpanded;
                 }
                 ++cnt;
@@ -418,33 +429,14 @@ static PlaySongListVC *stataicSelf = nil;
     
     int cha = (int )(_displayArray.count) - (int) (tmp.count);
     
-    if (_selectPath && _songObjct) {
-        
-        for (id object in tmp) {
-            if (_songObjct == object) {
-                
-                if (row < _selectPath.row) {
-                    _selectPath = [NSIndexPath indexPathForRow:_selectPath.row - cha inSection:0];
-                }
-                
-                _displayArray = [NSArray arrayWithArray:tmp];
-                [self.tableview reloadData];
-                
-                return;
-            }
-        }
-        
-        ToastViewMessage(@"正在播放,不能关闭");
-        
-    }else{
-    
-        if (row < _selectPath.row) {
-            _selectPath = [NSIndexPath indexPathForRow:_selectPath.row - cha inSection:0];
-        }
-        
-        _displayArray = [NSArray arrayWithArray:tmp];
-        [self.tableview reloadData];
+    if (row < _selectPath.row) {
+        _selectPath = [NSIndexPath indexPathForRow:_selectPath.row - cha inSection:0];
     }
+    
+    _displayArray = [NSArray arrayWithArray:tmp];
+    [self.tableview reloadData];
+    
+    return YES;
 }
 
 - (void)reloadAllYINYUE{

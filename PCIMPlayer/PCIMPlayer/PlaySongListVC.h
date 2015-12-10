@@ -24,7 +24,10 @@ typedef void(^ChangeSong)(NSString *songName,NSString *path);
 
 @property(strong,nonatomic) NSIndexPath *selectPath;
 
-@property (strong, nonatomic) CLTreeView_LEVEL2_Model *songObjct;
+@property (strong, nonatomic) CLTreeViewNode *songObjct;
+
+
+@property (assign, nonatomic) BOOL  upIsOk;
 
 + (instancetype )shareSonglist;
 

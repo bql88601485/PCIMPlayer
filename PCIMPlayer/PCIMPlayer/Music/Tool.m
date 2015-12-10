@@ -136,7 +136,7 @@
     NSString *name = nil;
     
     PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
-    
+    songlist.upIsOk = NO;
     if (YES) {
         
         NSInteger row = songlist.selectPath.row+1;
@@ -162,7 +162,34 @@
 
 + (NSString *)getUpSongName{
 
-    return @"";
+    
+    
+    
+    NSString *name = nil;
+    
+    PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
+    songlist.upIsOk = YES;
+    if (YES) {
+        
+        NSInteger row = songlist.selectPath.row-1;
+        if (row == 1) {
+            row = songlist.displayArray.count-1;
+        }
+        CLTreeViewNode *node = [songlist.displayArray objectAtIndex:row];
+        
+        if (node.nodeLevel == 0) {//下一个是首页//需要打开
+            [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            row++;
+            [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            row++;
+        }else if(node.nodeLevel == 1){
+            [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+            row++;
+        }
+        [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+    }
+    
+    return name;
 }
 
 @end

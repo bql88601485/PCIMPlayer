@@ -16,4 +16,6 @@
 @property (nonatomic) BOOL isExpanded;//节点是否展开
 @property (strong,nonatomic) NSMutableArray *sonNodes;//子节点
 
+@property (strong, nonatomic) NSString *name;
+
 @end
