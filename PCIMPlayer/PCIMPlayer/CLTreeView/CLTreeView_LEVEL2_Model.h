@@ -12,6 +12,7 @@
 
 @property (strong,nonatomic) NSString *name;
 @property (strong,nonatomic) NSString *signture;
+@property (strong,nonatomic) NSString *topName;
 @property (strong,nonatomic) NSString *headImgPath;//本地图片名,若不为空则优先于远程图片加载
 @property (strong,nonatomic) NSURL *headImgUrl;//远程图片链接
 

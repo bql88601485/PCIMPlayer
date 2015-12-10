@@ -99,18 +99,28 @@
     return fileUrl;
 }
 
++ (NSString *)getHomeDirectoryPath{
 
-
-//os - 获取沙盒目录下的所有文件
-+ (NSArray *) getAllFileNames:(NSString *)dirName
-{
     // 获得此程序的沙盒路径
-
+    
     NSArray *patchs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-     // 获取Documents路
+    // 获取Documents路
     NSString *documentsDirectory = [patchs objectAtIndex:0];
     
-    NSString *fileDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",dirName]];
+    NSString *fileDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",@"PCIMPlayer"]];
+    
+    return fileDirectory;
+}
++ (NSString *)getPlayName:(NSString *)songName{
+    
+    NSString *sonName1 = [NSString stringWithFormat:@"%@/%@",[Tool getHomeDirectoryPath],songName];
+ 
+    return sonName1;
+}
+//os - 获取沙盒目录下的所有文件
++ (NSArray *) getAllFileNames
+{
+    NSString *fileDirectory = [Tool getHomeDirectoryPath];
     
     NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fileDirectory error:nil];
     

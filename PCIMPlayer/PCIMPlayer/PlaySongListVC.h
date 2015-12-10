@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ChangeSong)(NSString *songName,NSString *path);
+
 @interface PlaySongListVC : UIViewController
+
+@property (nonatomic, strong) ChangeSong kchangeSong;
 
 + (instancetype )shareSonglist;
 

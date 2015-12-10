@@ -8,7 +8,7 @@
 
 #import "PlaySongListVC.h"
 #import "CLTree.h"
-
+#import "Tool.h"
 static PlaySongListVC *stataicSelf = nil;
 
 @interface PlaySongListVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -35,136 +35,164 @@ static PlaySongListVC *stataicSelf = nil;
 
 //添加演示数据
 -(void) addTestData{
-    CLTreeViewNode *node0 = [[CLTreeViewNode alloc]init];
-    node0.nodeLevel = 0;
-    node0.type = 0;
-    node0.sonNodes = nil;
-    node0.isExpanded = FALSE;
-    CLTreeView_LEVEL0_Model *tmp0 =[[CLTreeView_LEVEL0_Model alloc]init];
-    tmp0.name = @"收藏";
-    tmp0.headImgPath = @"contacts_collect.png";
-    tmp0.headImgUrl = nil;
-    node0.nodeData = tmp0;
+    NSArray *array = [Tool getAllFileNames];
     
-    CLTreeViewNode *node1 = [[CLTreeViewNode alloc]init];
-    node1.nodeLevel = 0;
-    node1.type = 0;
-    node1.sonNodes = nil;
-    node1.isExpanded = FALSE;
-    CLTreeView_LEVEL0_Model *tmp1 =[[CLTreeView_LEVEL0_Model alloc]init];
-    tmp1.name = @"软件技术";
-    tmp1.headImgPath = @"contacts_major.png";
-    tmp1.headImgUrl = nil;
-    node1.nodeData = tmp1;
+    NSString *topStr = nil;
     
-    CLTreeViewNode *node2 = [[CLTreeViewNode alloc]init];
-    node2.nodeLevel = 0;
-    node2.type = 0;
-    node2.sonNodes = nil;
-    node2.isExpanded = FALSE;
-    CLTreeView_LEVEL0_Model *tmp2 =[[CLTreeView_LEVEL0_Model alloc]init];
-    tmp2.name = @"信息工程";
-    tmp2.headImgPath = @"contacts_major.png";
-    tmp2.headImgUrl = nil;
-    node2.nodeData = tmp2;
+    NSString *topTwoStr = nil;
     
-    CLTreeViewNode *node3 = [[CLTreeViewNode alloc]init];
-    node3.nodeLevel = 1;
-    node3.type = 1;
-    node3.sonNodes = nil;
-    node3.isExpanded = FALSE;
-    CLTreeView_LEVEL1_Model *tmp3 =[[CLTreeView_LEVEL1_Model alloc]init];
-    tmp3.name = @"软件技术1班";
-    tmp3.sonCnt = @"3";
-    node3.nodeData = tmp3;
+    NSString *topThreeStr = nil;
     
-    CLTreeViewNode *node4 = [[CLTreeViewNode alloc]init];
-    node4.nodeLevel = 1;
-    node4.type = 1;
-    node4.sonNodes = nil;
-    node4.isExpanded = FALSE;
-    CLTreeView_LEVEL1_Model *tmp4 =[[CLTreeView_LEVEL1_Model alloc]init];
-    tmp4.name = @"软件技术2班";
-    tmp4.sonCnt = @"1";
-    node4.nodeData = tmp4;
+    _dataArray = [[NSMutableArray alloc] init];
     
-    CLTreeViewNode *node5 = [[CLTreeViewNode alloc]init];
-    node5.nodeLevel = 2;
-    node5.type = 2;
-    node5.sonNodes = nil;
-    node5.isExpanded = FALSE;
-    CLTreeView_LEVEL2_Model *tmp5 =[[CLTreeView_LEVEL2_Model alloc]init];
-    tmp5.name = @"flywarrior";
-    tmp5.signture = @"老是失眠怎么办啊";
-    tmp5.headImgPath = @"head1.jpg";
-    tmp5.headImgUrl = nil;
-    node5.nodeData = tmp5;
+    CLTreeViewNode *node0 = nil;
     
-    CLTreeViewNode *node6 = [[CLTreeViewNode alloc]init];
-    node6.nodeLevel = 2;
-    node6.type = 2;
-    node6.sonNodes = nil;
-    node6.isExpanded = FALSE;
-    CLTreeView_LEVEL2_Model *tmp6 =[[CLTreeView_LEVEL2_Model alloc]init];
-    tmp6.name = @"flywarrior2";
-    tmp6.signture = @"用头用力撞下键盘就好了。";
-    tmp6.headImgPath = @"head2.jpg";
-    tmp6.headImgUrl = nil;
-    node6.nodeData = tmp6;
+    CLTreeViewNode *node1 = nil;
+    NSMutableArray *node1Array = nil;
+    CLTreeViewNode *node2 = nil;
+    NSMutableArray *node2Array = nil;
+    //分析数据
+    for (NSString *str in array) {
+        //排除
+        if ([str isEqualToString:@".DS_Store"]) {
+            continue;
+        }
+        NSArray *tmpArr = [str componentsSeparatedByString:@"/"];
+        
+        if (tmpArr.count == 1) {//首位
+            if (nil == topStr) {
+                topStr = [tmpArr firstObject];
+                
+                node0 = [[CLTreeViewNode alloc]init];
+                node0.nodeLevel = 0;
+                node0.type = 0;
+                node0.sonNodes = nil;
+                node0.isExpanded = FALSE;
+                CLTreeView_LEVEL0_Model *tmp0 =[[CLTreeView_LEVEL0_Model alloc]init];
+                tmp0.name = topStr;
+                tmp0.headImgPath = @"contacts_collect.png";
+                tmp0.headImgUrl = nil;
+                node0.nodeData = tmp0;
+                
+            }else{
+                if (![topStr isEqualToString:tmpArr.firstObject]) {//代表换文件夹了
+                    
+                    //最后一个入住
+                    if (node1Array && node1 && node2Array) {
+                        
+                        CLTreeView_LEVEL1_Model *tmp1 =[[CLTreeView_LEVEL1_Model alloc]init];
+                        tmp1.name = topTwoStr;
+                        tmp1.sonCnt = [NSString stringWithFormat:@"%zd",node2Array.count];
+                        node1.nodeData = tmp1;
+                        node1.sonNodes = node2Array;
+                        [node1Array addObject:node1];
+                    }
+                    
+                    topTwoStr = nil;
+                    topThreeStr = nil;
+                    
+                    node0.sonNodes = node1Array;
+                    
+                    [_dataArray addObject:node0];
+                    
+                    //TODO : 需要换文件夹了
+                    topStr = [tmpArr firstObject];
+                    
+                    node0 = [[CLTreeViewNode alloc]init];
+                    node0.nodeLevel = 0;
+                    node0.type = 0;
+                    node0.sonNodes = nil;
+                    node0.isExpanded = FALSE;
+                    CLTreeView_LEVEL0_Model *tmp0 =[[CLTreeView_LEVEL0_Model alloc]init];
+                    tmp0.name = topStr;
+                    tmp0.headImgPath = @"contacts_collect.png";
+                    tmp0.headImgUrl = nil;
+                    node0.nodeData = tmp0;
+                }
+            }
+        }else if (tmpArr.count == 2){
+            if (nil == topTwoStr) {
+                
+                node1Array = [[NSMutableArray alloc] init];
+                
+                topTwoStr = [tmpArr objectAtIndex:1];
+                if ([topTwoStr isEqualToString:@".DS_Store"]) {
+                    topTwoStr = nil;
+                    continue;
+                }
+                
+                node1 = [[CLTreeViewNode alloc]init];
+                node1.nodeLevel = 1;
+                node1.type = 1;
+                node1.sonNodes = nil;
+                node1.isExpanded = FALSE;
+            }
+            else{
+                
+                if (![topTwoStr isEqualToString:[tmpArr objectAtIndex:1]]) {
+                    
+                    topThreeStr = nil;
+                    CLTreeView_LEVEL1_Model *tmp1 =[[CLTreeView_LEVEL1_Model alloc]init];
+                    tmp1.name = topTwoStr;
+                    tmp1.sonCnt = [NSString stringWithFormat:@"%zd",node2Array.count];
+                    node1.nodeData = tmp1;
+                    node1.sonNodes = node2Array;
+                    [node1Array addObject:node1];
+                    
+                    //TODO : 需要更换文件夹
+                    topTwoStr = [tmpArr objectAtIndex:1];
+                    
+                    node1 = [[CLTreeViewNode alloc]init];
+                    node1.nodeLevel = 1;
+                    node1.type = 1;
+                    node1.sonNodes = nil;
+                    node1.isExpanded = FALSE;
+                }
+                
+                
+            }
+        }else if ([tmpArr count] == 3){
+            
+            if (topThreeStr == nil) {
+                
+                node2Array = [[NSMutableArray alloc] init];
+                
+                topThreeStr = [tmpArr objectAtIndex:2];
+                if ([topThreeStr isEqualToString:@".DS_Store"]) {
+                    topThreeStr = nil;
+                    continue;
+                }
+            }
+            else{
+                topThreeStr = [tmpArr objectAtIndex:2];
+            }
+            
+            node2 = [[CLTreeViewNode alloc]init];
+            node2.nodeLevel = 2;
+            node2.type = 2;
+            node2.sonNodes = nil;
+            node2.isExpanded = FALSE;
+            CLTreeView_LEVEL2_Model *tmp9 =[[CLTreeView_LEVEL2_Model alloc]init];
+            tmp9.name = topThreeStr;
+            tmp9.signture = topTwoStr;
+            tmp9.topName = topStr;
+            tmp9.headImgPath = @"Qidong.png";
+            tmp9.headImgUrl = nil;
+            node2.nodeData = tmp9;
+            
+            [node2Array addObject:node2];
+        }
+    }
     
-    CLTreeViewNode *node7 = [[CLTreeViewNode alloc]init];
-    node7.nodeLevel = 2;
-    node7.type = 2;
-    node7.sonNodes = nil;
-    node7.isExpanded = FALSE;
-    CLTreeView_LEVEL2_Model *tmp7 =[[CLTreeView_LEVEL2_Model alloc]init];
-    tmp7.name = @"李四";
-    tmp7.signture = @"说的好有道理，我竟无言以对。";
-    tmp7.headImgPath = @"head3.jpg";
-    tmp7.headImgUrl = nil;
-    node7.nodeData = tmp7;
     
-    CLTreeViewNode *node8 = [[CLTreeViewNode alloc]init];
-    node8.nodeLevel = 2;
-    node8.type = 2;
-    node8.sonNodes = nil;
-    node8.isExpanded = FALSE;
-    CLTreeView_LEVEL2_Model *tmp8 =[[CLTreeView_LEVEL2_Model alloc]init];
-    tmp8.name = @"田七";
-    tmp8.signture = @"肚子好饿啊。。。";
-    tmp8.headImgPath = @"head4.jpg";
-    tmp8.headImgUrl = nil;
-    node8.nodeData = tmp8;
     
-    CLTreeViewNode *node9 = [[CLTreeViewNode alloc]init];
-    node9.nodeLevel = 2;
-    node9.type = 2;
-    node9.sonNodes = nil;
-    node9.isExpanded = FALSE;
-    CLTreeView_LEVEL2_Model *tmp9 =[[CLTreeView_LEVEL2_Model alloc]init];
-    tmp9.name = @"王大锤";
-    tmp9.signture = @"走向人生巅峰！";
-    tmp9.headImgPath = @"head5.jpg";
-    tmp9.headImgUrl = nil;
-    node9.nodeData = tmp9;
-    
-    CLTreeViewNode *node10 = [[CLTreeViewNode alloc]init];
-    node10.nodeLevel = 2;
-    node10.type = 2;
-    node10.sonNodes = nil;
-    node10.isExpanded = FALSE;
-    CLTreeView_LEVEL2_Model *tmp10 =[[CLTreeView_LEVEL2_Model alloc]init];
-    tmp10.name = @"孔连顺";
-    tmp10.signture = @"锤锤。。。";
-    tmp10.headImgPath = @"head6.jpg";
-    tmp10.headImgUrl = nil;
-    node10.nodeData = tmp10;
-    
-    node0.sonNodes = [NSMutableArray arrayWithObjects:node8,node9,nil];
-    node1.sonNodes = [NSMutableArray arrayWithObjects:node3,node4,nil];
-    node3.sonNodes = [NSMutableArray arrayWithObjects:node5,node7,node10,nil];
-    node4.sonNodes = [NSMutableArray arrayWithObjects:node6,nil];
-    _dataArray = [NSMutableArray arrayWithObjects:node0,node1,node2, nil];
+    //最后一个入住
+    if (node1Array && node1 && node2Array && node0) {
+        node1.sonNodes = node2Array;
+        [node1Array addObject:node1];
+        node0.sonNodes = node1Array;
+        [_dataArray addObject:node0];
+    }
 }
 
 
@@ -175,8 +203,6 @@ static PlaySongListVC *stataicSelf = nil;
     
     [self addTestData];//添加演示数据
     [self reloadDataForDisplayArray];//初始化将要显示的数据
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -299,6 +325,17 @@ static PlaySongListVC *stataicSelf = nil;
     [self reloadDataForDisplayArrayChangeAt:indexPath.row];//修改cell的状态(关闭或打开)
     if(node.type == 2){
         //处理叶子节点选中，此处需要自定义
+        
+        CLTreeView_LEVEL2_Model *model = (id )node.nodeData;
+        
+        NSString *path = [NSString stringWithFormat:@"%@/%@/%@",model.topName,model.signture,model.name];
+        
+        if (_kchangeSong) {
+            
+            [self goBack:nil];
+            path = [Tool  getPlayName:path];
+            self.kchangeSong(model.name,path);
+        }
     }
     else{
         CLTreeView_LEVEL0_Cell *cell = (CLTreeView_LEVEL0_Cell*)[tableView cellForRowAtIndexPath:indexPath];
