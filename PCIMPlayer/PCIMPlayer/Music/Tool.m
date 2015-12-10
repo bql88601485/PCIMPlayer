@@ -99,4 +99,22 @@
     return fileUrl;
 }
 
+
+
+//os - 获取沙盒目录下的所有文件
++ (NSArray *) getAllFileNames:(NSString *)dirName
+{
+    // 获得此程序的沙盒路径
+
+    NSArray *patchs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+     // 获取Documents路
+    NSString *documentsDirectory = [patchs objectAtIndex:0];
+    
+    NSString *fileDirectory = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@",dirName]];
+    
+    NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fileDirectory error:nil];
+    
+    return files;
+}
+
 @end

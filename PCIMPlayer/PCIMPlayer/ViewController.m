@@ -73,6 +73,54 @@
     [self initAllItem];
 }
 
+
+// 接收远程控制事件
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+            case UIEventSubtypeRemoteControlPause:
+            case UIEventSubtypeRemoteControlTogglePlayPause:
+            {
+                [self.player playOrPause: nil];
+            }
+                break;
+            case UIEventSubtypeRemoteControlNextTrack:
+            {
+                [self playTmpSong:nil];
+            }
+                break;
+            case UIEventSubtypeRemoteControlPreviousTrack:
+            {
+                [self playTmpSong:nil];
+            }
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -109,7 +157,7 @@
 //播放示例音乐
 - (IBAction)playTmpSong:(id)sender {
     
-    NSURL *nameStr = [Tool getAppSongName:@"实例音乐Demo - 纯音乐版" type:@"mp3"];
+    NSURL *nameStr = [Tool getAppSongName:@"林俊杰-背对背拥抱" type:@"mp3"];
     [self.player PlayerName:nameStr];
     
     [self SongName:@"实例音乐Demo - 纯音乐版"];

@@ -26,12 +26,12 @@ static TAGPlayer *staticSelf = nil;
 - (void)setupLockScreenSongInfos
 {
     // 设置锁屏歌曲专辑图片
-    MPMediaItemArtwork *artWork = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"红颜劫.jpg"]];
+    MPMediaItemArtwork *artWork = [[MPMediaItemArtwork alloc] initWithImage:[UIImage imageNamed:@"Qidong.png"]];
     
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = @{
                                                               MPMediaItemPropertyPlaybackDuration:@(_musicPlayer.duration),
-                                                              MPMediaItemPropertyTitle:@"红颜劫",
-                                                              MPMediaItemPropertyArtist:@"姚贝娜",
+                                                              MPMediaItemPropertyTitle:@"凤凰八音",
+                                                              MPMediaItemPropertyArtist:@"凤凰八音",
                                                               MPMediaItemPropertyArtwork:artWork,
                                                               MPNowPlayingInfoPropertyPlaybackRate:@(1.0f)
                                                               };
@@ -81,6 +81,20 @@ static TAGPlayer *staticSelf = nil;
     
     self.musicPlayer.enableRate = YES;
 
+    [self.musicPlayer prepareToPlay];
+    
+    self.musicPlayer.volume = 0.0;
+    
+    [self.play_Button setImage:[UIImage imageNamed:@"player_btn_pause_normal.png"] forState:UIControlStateNormal];
+    [self.play_Button setImage:[UIImage imageNamed:@"player_btn_pause_highlight.png"] forState:UIControlStateHighlighted];
+    //设定定时器
+    self.timer=[NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(show) userInfo:nil repeats:YES];
+    [self.timer setFireDate:[NSDate date]];
+    
+    [self.timer fire]; // 触发
+    
+    [self updatePlayOrPauseBtn:YES];
+    
     // 3. 设置音频支持后台播放
     [self setAudio2SupportBackgroundPlay];
     // 4. 设置锁屏歌曲信息
@@ -106,7 +120,20 @@ static TAGPlayer *staticSelf = nil;
 {
     
 }
-
+- (void)stopSong{
+    
+    [self.musicPlayer stop];
+    
+    
+    [self.play_Button setImage:[UIImage imageNamed:@"player_btn_play_normal.png"] forState:UIControlStateNormal];
+    [self.play_Button setImage:[UIImage imageNamed:@"player_btn_play_highlight.png"] forState:UIControlStateHighlighted];
+    
+    // 暂停定时器
+    self.timer.fireDate = [NSDate distantFuture];
+    
+    [self updatePlayOrPauseBtn:NO];
+    
+}
 - (void )playOrPause:(id)sender {
     
     // 重置播放速率
@@ -138,38 +165,43 @@ static TAGPlayer *staticSelf = nil;
     }
 }
 
-
-// 接收远程控制事件
-- (void)remoteControlReceivedWithEvent:(UIEvent *)event
-{
-    if (event.type == UIEventTypeRemoteControl) {
-        switch (event.subtype) {
-            case UIEventSubtypeRemoteControlPlay:
-            case UIEventSubtypeRemoteControlPause:
-            case UIEventSubtypeRemoteControlTogglePlayPause:
-                [self playOrPause:nil];
-                break;
-                
-            default:
-                break;
-        }
-    }
-}
-
 #pragma mark 定时器设定
 -(void)show
 {
     NSString *currentTimeStr=[NSString stringWithFormat:@"%02d:%02d",(int)self.musicPlayer.currentTime/60,(int)self.musicPlayer.currentTime%60];
-     NSString *totalTime =[NSString stringWithFormat:@"%02d:%02d",(int)self.musicPlayer.duration/60,(int)self.musicPlayer.duration%60];
+    NSString *totalTime =[NSString stringWithFormat:@"%02d:%02d",(int)self.musicPlayer.duration/60,(int)self.musicPlayer.duration%60];
     self.currentTime.text = [NSString stringWithFormat:@"%@/%@",currentTimeStr,totalTime];
     
+    //音量逻辑
+    /**
+     音效渐强渐弱规则：
+     1、将音量分为0-100值；
+     2、每个时间段音乐播放时间分3个阶段：开始【前10秒钟】，正常播放、结尾【后10秒钟】
+     3、 开始（从0 - 100渐强），正常播放（保持）、结尾（从100 - 0渐弱）
+     */
+
+    //音量逐渐变大
+    if (self.musicPlayer.currentTime >= 0 && self.musicPlayer.currentTime <= 10) {
+        self.musicPlayer.volume = self.musicPlayer.currentTime/10;
+    }else if (self.musicPlayer.duration - self.musicPlayer.currentTime <= 10){
+        self.musicPlayer.volume = (self.musicPlayer.duration - self.musicPlayer.currentTime)/10;
+    }
+    
+    
+    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);
+    
     CGFloat value =self.musicPlayer.currentTime/self.musicPlayer.duration;
-    if (value>0.999) {
+    
+    if (value>0.99) {
+        
+        [self stopSong];
+        
         [self nextButtonClick];
     }
 }
 
 - (void)nextButtonClick {
+    
     if (self.ktouchEvent) {
         self.ktouchEvent(TAGPlayerStatus_Next);
     }
