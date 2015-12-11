@@ -136,7 +136,7 @@
     NSString *name = nil;
     
     PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
-    songlist.upIsOk = NO;
+    songlist.upIsOk = YES;
     if (YES) {
         
         NSInteger row = songlist.selectPath.row+1;
@@ -162,9 +162,6 @@
 
 + (NSString *)getUpSongName{
 
-    
-    
-    
     NSString *name = nil;
     
     PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
@@ -172,19 +169,44 @@
     if (YES) {
         
         NSInteger row = songlist.selectPath.row-1;
-        if (row == 1) {
-            row = songlist.displayArray.count-1;
-        }
+      
         CLTreeViewNode *node = [songlist.displayArray objectAtIndex:row];
         
-        if (node.nodeLevel == 0) {//下一个是首页//需要打开
+        if (node.nodeLevel == 0) {//第一级  需要打开两次
             [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
             row++;
             [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-            row++;
-        }else if(node.nodeLevel == 1){
+            node = [songlist.displayArray objectAtIndex:row];
+            row += (node.sonNodes.count-1);
+        }else if (node.nodeLevel == 1){
+            row--;
             [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-            row++;
+            node = [songlist.displayArray objectAtIndex:row];
+            if (node.nodeLevel == 1) {
+                row += (node.sonNodes.count);
+            }else if(node.nodeLevel == 0){
+                if (row == 0) {
+                    row = songlist.displayArray.count - 1;
+                    node = [songlist.displayArray objectAtIndex:row];
+                    if (node.nodeLevel == 0) {
+                        [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+                        row += (node.sonNodes.count);
+                        [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+                        node = [songlist.displayArray objectAtIndex:row];
+                        row += (node.sonNodes.count);
+                    }
+                }else{
+                    row--;
+                    node = [songlist.displayArray objectAtIndex:row];
+                    [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+                    row += (node.sonNodes.count);
+                    node = [songlist.displayArray objectAtIndex:row];
+                    if (node.nodeLevel == 1) {
+                        [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+                        row += (node.sonNodes.count);
+                    }
+                }
+            }
         }
         [songlist tableView:songlist.tableview didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
     }

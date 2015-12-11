@@ -324,6 +324,9 @@ static PlaySongListVC *stataicSelf = nil;
  处理cell选中事件，需要自定义的部分
  --------------------------------------- */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    NSLog(@"\n 下一站 = %ld",(long)indexPath.row);
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CLTreeViewNode *node = [_displayArray objectAtIndex:indexPath.row];
 
@@ -393,12 +396,23 @@ static PlaySongListVC *stataicSelf = nil;
  修改cell的状态(关闭或打开)
  --------------------------------------- */
 -(BOOL ) reloadDataForDisplayArrayChangeAt:(NSInteger)row{
+    
+    if (self.view.frame.origin.y < 20) {
+        _upIsOk = NO;
+    }
+    
     NSMutableArray *tmp = [[NSMutableArray alloc]init];
     NSInteger cnt=0;
     for (CLTreeViewNode *node in _dataArray) {
         [tmp addObject:node];
         if(cnt == row){
             node.isExpanded = !node.isExpanded;
+            
+            if (_upIsOk) {
+                if (!node.isExpanded) {
+                    node.isExpanded = YES;
+                }
+            }
         }
         ++cnt;
         if(node.isExpanded){
@@ -415,6 +429,12 @@ static PlaySongListVC *stataicSelf = nil;
                     }
                     
                     node2.isExpanded = !node2.isExpanded;
+                    
+                    if (_upIsOk) {
+                        if (!node2.isExpanded) {
+                            node2.isExpanded = YES;
+                        }
+                    }
                 }
                 ++cnt;
                 if(node2.isExpanded){

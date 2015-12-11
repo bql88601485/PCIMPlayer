@@ -188,7 +188,7 @@ static TAGPlayer *staticSelf = nil;
     }
     
     
-    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);
+//    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);
     
     CGFloat value =self.musicPlayer.currentTime/self.musicPlayer.duration;
     
