@@ -9,6 +9,9 @@
 #import "Tool.h"
 #import "PlaySongListVC.h"
 #import "CLTree.h"
+
+#define KEY_USER_LAST_SONG_NAME @"KEY_USER_LAST_SONG_NAME"
+
 @implementation Tool
 +(void)ImageHandleWithImageView:(UIImageView *)imageView andImageName:(NSString *)imageName
 {
@@ -213,5 +216,239 @@
     
     return name;
 }
+
+
+#pragma mark - setter && getter
++ (void)setLastPlayName:(NSDictionary *)name{
+    
+    NSUserDefaults  *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:name forKey:KEY_USER_LAST_SONG_NAME];
+    [ud synchronize];
+}
++ (NSString *)lastPlayName{
+    
+    return @"";
+    return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LAST_SONG_NAME];
+}
+
+#pragma mark -  系统设置
+
++ (void)setMeiTianCishu:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"111111111111111"];
+    [ud synchronize];
+}
++ (NSString *)getMeiTianCishu{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"111111111111111"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"111111111111111"];
+    }
+    return @"6";
+}
+
++ (void)setdiyici:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"222222222222222"];
+    [ud synchronize];
+}
++ (NSString *)getdiyici{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"222222222222222"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"222222222222222"];
+    }
+    return @"06:00";
+}
+
++ (void)setdiyiciChang:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"33333333333333"];
+    [ud synchronize];
+}
++ (NSString *)getdiyiciChang{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"33333333333333"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"33333333333333"];
+    }
+    return @"15";
+}
+
++ (void)setdierci:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"4444444444444"];
+    [ud synchronize];
+}
++ (NSString *)getdierci{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"4444444444444"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"4444444444444"];
+    }
+    return @"10:00";
+}
+
++ (void)setdierciChang:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"55555555555555"];
+    [ud synchronize];
+}
++ (NSString *)getdierciChang{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"55555555555555"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"55555555555555"];
+    }
+        return @"30";
+}
+
++ (void)setdisanci:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"66666666666666"];
+    [ud synchronize];
+}
++ (NSString *)getdisanci{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"66666666666666"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"66666666666666"];
+    }
+        return @"12:00";
+}
+
++ (void)setdisanciChang:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"7777777777777"];
+    [ud synchronize];
+}
++ (NSString *)getdisanciChang{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"7777777777777"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"7777777777777"];
+    }
+        return @"15";
+}
+
++ (void)setdisici:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"88888888888888"];
+    [ud synchronize];
+}
++ (NSString *)getdisici{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"88888888888888"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"88888888888888"];
+    }
+            return @"16:00";
+}
+
++ (void)setdisiciChang:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"999999999999"];
+    [ud synchronize];
+}
++ (NSString *)getdisiciChang{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"999999999999"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"999999999999"];
+    }
+    return @"30";
+}
+
++ (void)setdiwuci:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"00000000000"];
+    [ud synchronize];
+}
++ (NSString *)getdiwuci{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"00000000000"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"00000000000"];
+    }
+    return @"18:00";
+}
+
++ (void)setdiwuciChang:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"aaaaaaaaaaaaa"];
+    [ud synchronize];
+}
++ (NSString *)getdiwuciChang{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"aaaaaaaaaaaaa"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"aaaaaaaaaaaaa"];
+    }
+    return @"15";
+}
+
++ (void)setdiliuci:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"bbbbbbbbbbbbbbb"];
+    [ud synchronize];
+}
++ (NSString *)getdiliuci{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"bbbbbbbbbbbbbbb"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"bbbbbbbbbbbbbbb"];
+    }
+    return @"21:00";
+}
+
++ (void)setdiliuciChang:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"ccccccccccccccccc"];
+    [ud synchronize];
+}
++ (NSString *)getdiliuciChang{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ccccccccccccccccc"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"ccccccccccccccccc"];
+    }
+    return @"15";
+}
+
++ (void)setxunhuan:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"ddddddddddddddddd"];
+    [ud synchronize];
+}
++ (NSString *)getxunhuan{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ddddddddddddddddd"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"ddddddddddddddddd"];
+    }
+    return @"7";
+}
+
++ (void)setjiange:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"eeeeeeeeeeeeeee"];
+    [ud synchronize];
+}
++ (NSString *)getjiange{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"eeeeeeeeeeeeeee"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"eeeeeeeeeeeeeee"];
+    }
+    return @"1";
+}
+
++ (void)setbofangliebiaomoshi:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"fffffffffffffff"];
+    [ud synchronize];
+}
++ (NSString *)getbofangliebiaomoshi{//1循环 ， 2 随机
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"fffffffffffffff"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"fffffffffffffff"];
+    }
+    return @"1";
+}
+
++ (void)setliebiaoneimoshi:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"ggggggggggggggggggg"];
+    [ud synchronize];
+}
++ (NSString *)getliebiaoneimoshi{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"ggggggggggggggggggg"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"ggggggggggggggggggg"];
+    }
+    return @"1";
+}
+
++ (void)setyinxiao:(NSString *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"mmmmmmmmmmmmmmmmmmm"];
+    [ud synchronize];
+}
++ (NSString *)getyinxiao{//0 关闭 1 打开
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"mmmmmmmmmmmmmmmmmmm"]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:@"mmmmmmmmmmmmmmmmmmm"];
+    }
+    return @"0";
+}
+
+
 
 @end

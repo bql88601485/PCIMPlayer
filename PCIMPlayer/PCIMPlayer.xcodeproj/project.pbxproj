@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E536C0371C19A9DD00398360 /* RCToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = E536C0361C19A9DD00398360 /* RCToastView.m */; };
+		E536C03C1C1BB9C300398360 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E536C03A1C1BB9C300398360 /* SettingCell.xib */; };
+		E536C0441C1C276E00398360 /* MagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = E536C03F1C1C276E00398360 /* MagnifierView.m */; };
+		E536C0451C1C276E00398360 /* MyPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E536C0411C1C276E00398360 /* MyPickerView.m */; };
+		E536C0461C1C276E00398360 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = E536C0431C1C276E00398360 /* WheelView.m */; };
+		E536C0481C1C277500398360 /* upshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E536C0471C1C277500398360 /* upshadow.png */; };
+		E536C04A1C1C27A600398360 /* downshadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E536C0491C1C27A600398360 /* downshadow.png */; };
 		E5D05D821C1802B50084B92D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D811C1802B50084B92D /* main.m */; };
 		E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D841C1802B50084B92D /* AppDelegate.m */; };
 		E5D05D881C1802B50084B92D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05D871C1802B50084B92D /* ViewController.m */; };
@@ -87,6 +93,15 @@
 /* Begin PBXFileReference section */
 		E536C0351C19A9DD00398360 /* RCToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCToastView.h; sourceTree = "<group>"; };
 		E536C0361C19A9DD00398360 /* RCToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCToastView.m; sourceTree = "<group>"; };
+		E536C03A1C1BB9C300398360 /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		E536C03E1C1C276E00398360 /* MagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagnifierView.h; sourceTree = "<group>"; };
+		E536C03F1C1C276E00398360 /* MagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagnifierView.m; sourceTree = "<group>"; };
+		E536C0401C1C276E00398360 /* MyPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPickerView.h; sourceTree = "<group>"; };
+		E536C0411C1C276E00398360 /* MyPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPickerView.m; sourceTree = "<group>"; };
+		E536C0421C1C276E00398360 /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		E536C0431C1C276E00398360 /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
+		E536C0471C1C277500398360 /* upshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upshadow.png; sourceTree = "<group>"; };
+		E536C0491C1C27A600398360 /* downshadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downshadow.png; sourceTree = "<group>"; };
 		E5D05D7D1C1802B50084B92D /* PCIMPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCIMPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D05D811C1802B50084B92D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E5D05D831C1802B50084B92D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +213,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E536C03D1C1C276E00398360 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				E536C0471C1C277500398360 /* upshadow.png */,
+				E536C0491C1C27A600398360 /* downshadow.png */,
+				E536C03E1C1C276E00398360 /* MagnifierView.h */,
+				E536C03F1C1C276E00398360 /* MagnifierView.m */,
+				E536C0401C1C276E00398360 /* MyPickerView.h */,
+				E536C0411C1C276E00398360 /* MyPickerView.m */,
+				E536C0421C1C276E00398360 /* WheelView.h */,
+				E536C0431C1C276E00398360 /* WheelView.m */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
 		E5D05D741C1802B50084B92D = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +247,7 @@
 		E5D05D7F1C1802B50084B92D /* PCIMPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				E536C03D1C1C276E00398360 /* PickerView */,
 				E5D05DD61C1809C30084B92D /* Icon */,
 				E5D05DD21C18099B0084B92D /* Model */,
 				E5D05D971C1802CA0084B92D /* Music */,
@@ -231,6 +262,7 @@
 				E5D05E6A1C1866230084B92D /* SettingVC.h */,
 				E5D05E6B1C1866230084B92D /* SettingVC.m */,
 				E5D05E6C1C1866230084B92D /* SettingVC.xib */,
+				E536C03A1C1BB9C300398360 /* SettingCell.xib */,
 				E5D05D891C1802B50084B92D /* Main.storyboard */,
 				E5D05D8C1C1802B50084B92D /* Assets.xcassets */,
 				E5D05D8E1C1802B50084B92D /* LaunchScreen.storyboard */,
@@ -456,6 +488,7 @@
 				E5D05E0E1C1809CB0084B92D /* player_slider_playback_left@2x.png in Resources */,
 				E5D05E101C1809CB0084B92D /* player_slider_playback_thumb@2x.png in Resources */,
 				E5D05E671C1861630084B92D /* Level0_Cell.xib in Resources */,
+				E536C04A1C1C27A600398360 /* downshadow.png in Resources */,
 				E5D05E201C1809CB0084B92D /* random_pressed@2x.png in Resources */,
 				E5D05E031C1809CB0084B92D /* nowplaying_random@2x.png in Resources */,
 				E5D05E051C1809CB0084B92D /* nowplayingSelected@2x.png in Resources */,
@@ -473,7 +506,9 @@
 				E5D05E321C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 in Resources */,
 				E5D05E161C1809CB0084B92D /* playing_volumn_slide_bg_ios6@2x.png in Resources */,
 				E5D05E1B1C1809CB0084B92D /* playing_volumn_slide_sound_little_icon_h@2x.png in Resources */,
+				E536C03C1C1BB9C300398360 /* SettingCell.xib in Resources */,
 				E5D05E141C1809CB0084B92D /* playing_volumn_nosound_icon_h@2x.png in Resources */,
+				E536C0481C1C277500398360 /* upshadow.png in Resources */,
 				E5D05E121C1809CB0084B92D /* playing_bmwonboard_default@2x.png in Resources */,
 				E5D05E1F1C1809CB0084B92D /* random@2x.png in Resources */,
 				E5D05E231C1809CB0084B92D /* recogniz_listen@2x.png in Resources */,
@@ -506,6 +541,9 @@
 				E5D05E5A1C1861630084B92D /* CLTreeViewController.m in Sources */,
 				E5D05E541C1861630084B92D /* CLTreeView_LEVEL0_Cell.m in Sources */,
 				E5D05E591C1861630084B92D /* CLTreeView_LEVEL2_Model.m in Sources */,
+				E536C0451C1C276E00398360 /* MyPickerView.m in Sources */,
+				E536C0461C1C276E00398360 /* WheelView.m in Sources */,
+				E536C0441C1C276E00398360 /* MagnifierView.m in Sources */,
 				E5D05E571C1861630084B92D /* CLTreeView_LEVEL1_Model.m in Sources */,
 				E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */,
 				E5D05E291C183DE60084B92D /* Tool.m in Sources */,

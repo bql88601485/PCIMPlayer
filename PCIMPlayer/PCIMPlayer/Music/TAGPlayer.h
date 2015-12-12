@@ -23,6 +23,8 @@ typedef void(^PlayEvent)(TAGPlayerStatus status);
 
 @interface TAGPlayer : NSObject<AVAudioPlayerDelegate>
 
+@property (nonatomic, strong) AVAudioPlayer* musicPlayer;
+
 @property (nonatomic, strong) UIButton *play_Button;
 @property (nonatomic, strong) UILabel *currentTime;
 

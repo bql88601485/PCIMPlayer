@@ -31,20 +31,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGr-gy-75e">
                                 <rect key="frame" x="0.0" y="61" width="600" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liY-ml-NRx">
-                                        <rect key="frame" x="473" y="10" width="104" height="30"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.12941176470588237" green="0.47450980392156861" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="104" id="UHq-oN-vTr"/>
-                                            <constraint firstAttribute="height" constant="30" id="w8T-5a-Gc1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="系统设置"/>
-                                        <connections>
-                                            <action selector="gotoSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQe-0v-ULe"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 正在播放：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLh-dB-yei">
                                         <rect key="frame" x="0.0" y="58" width="600" height="21"/>
                                         <animations/>
@@ -71,6 +57,20 @@
                                         <state key="normal" image="miniplayer_btn_playlist_highlight.png"/>
                                         <connections>
                                             <action selector="playSongList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOV-vK-k4b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="liY-ml-NRx">
+                                        <rect key="frame" x="473" y="10" width="104" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.12941176470588237" green="0.47450980392156861" blue="0.30196078431372547" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="104" id="UHq-oN-vTr"/>
+                                            <constraint firstAttribute="height" constant="30" id="w8T-5a-Gc1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="系统设置"/>
+                                        <connections>
+                                            <action selector="gotoSetting:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OQe-0v-ULe"/>
                                         </connections>
                                     </button>
                                 </subviews>

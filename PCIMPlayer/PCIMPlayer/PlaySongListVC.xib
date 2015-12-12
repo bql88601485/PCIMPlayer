@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.10000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYl-EK-SjA">
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYl-EK-SjA">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
                     <color key="backgroundColor" red="0.1137254902" green="0.40784313729999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="200" width="0.0" height="66"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9p-9B-O76">
-                            <rect key="frame" x="8" y="13" width="183" height="35"/>
+                            <rect key="frame" x="8" y="8" width="183" height="35"/>
                             <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="9IJ-MA-bZ6"/>
@@ -43,8 +43,8 @@
                     <animations/>
                     <color key="backgroundColor" red="0.1137254902" green="0.1764705882" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="66" id="7Uc-Ue-KM4"/>
-                        <constraint firstItem="B9p-9B-O76" firstAttribute="top" secondItem="QsI-ub-Bho" secondAttribute="top" constant="13" id="Jwj-1j-3UP"/>
+                        <constraint firstAttribute="height" constant="47" id="7Uc-Ue-KM4"/>
+                        <constraint firstItem="B9p-9B-O76" firstAttribute="top" secondItem="QsI-ub-Bho" secondAttribute="top" constant="8" id="Jwj-1j-3UP"/>
                         <constraint firstItem="B9p-9B-O76" firstAttribute="leading" secondItem="QsI-ub-Bho" secondAttribute="leading" constant="8" id="tDK-Jp-WSk"/>
                         <constraint firstAttribute="width" constant="320" id="yMH-Dg-VKX"/>
                     </constraints>

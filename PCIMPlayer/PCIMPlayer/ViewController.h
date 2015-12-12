@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic , assign) BOOL  playingDemoSong;
+
++ (instancetype )shareVC;
 
 @end
 

@@ -10,6 +10,7 @@
 #import "CLTree.h"
 #import "Tool.h"
 #import "RCToastView.h"
+#import "ViewController.h"
 static PlaySongListVC *stataicSelf = nil;
 
 @interface PlaySongListVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -301,6 +302,12 @@ static PlaySongListVC *stataicSelf = nil;
         CLTreeView_LEVEL2_Model *nodeData = node.nodeData;
         ((CLTreeView_LEVEL2_Cell*)cell).name.text = nodeData.name;
         ((CLTreeView_LEVEL2_Cell*)cell).signture.text = nodeData.signture;
+        ((CLTreeView_LEVEL2_Cell*)cell).name.textColor = [UIColor blackColor];
+        if (_songObjct) {
+            if ([_songObjct.name isEqualToString:node.name]) {
+                ((CLTreeView_LEVEL2_Cell*)cell).name.textColor = [UIColor colorWithRed:0.165 green:0.463 blue:0.298 alpha:1.000];
+            }
+        }
         if(nodeData.headImgPath != nil){
             //本地图片
             [((CLTreeView_LEVEL2_Cell*)cell).headImg setImage:[UIImage imageNamed:nodeData.headImgPath]];
@@ -335,6 +342,9 @@ static PlaySongListVC *stataicSelf = nil;
         return;
     }
     if(node.type == 2){
+        
+        [ViewController shareVC].playingDemoSong = NO;
+        
         //处理叶子节点选中，此处需要自定义
         CLTreeView_LEVEL2_Model *objec = (id )node.nodeData;
         _songObjct = (id )node;
@@ -348,6 +358,10 @@ static PlaySongListVC *stataicSelf = nil;
             [self goBack:nil];
             path = [Tool  getPlayName:path];
             self.kchangeSong(objec.name,path);
+            
+//            NSURL* fileUrl=[NSURL fileURLWithPath:path];
+//            NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:fileUrl,@"songPath",objec.name,@"songName", nil];
+//            [Tool setLastPlayName:dic];
         }
     }
     else{

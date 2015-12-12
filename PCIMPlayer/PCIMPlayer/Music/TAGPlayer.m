@@ -12,7 +12,6 @@ static TAGPlayer *staticSelf = nil;
 
 @interface TAGPlayer()
 
-@property (nonatomic, strong) AVAudioPlayer* musicPlayer;
 @property (nonatomic, strong) NSTimer* timer;
 
 @end

@@ -10,4 +10,9 @@
 
 @interface SettingVC : UIViewController
 
++ (instancetype )shareSetting;
+
+- (void)showVc;
+- (void)dismissVc;
+
 @end
