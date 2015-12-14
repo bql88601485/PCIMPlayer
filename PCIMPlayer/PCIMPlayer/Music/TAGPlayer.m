@@ -206,7 +206,7 @@ static TAGPlayer *staticSelf = nil;
     self.allTime++;
     
     NSString *playTime = [[PlaySongListVC shareSonglist] playingTime];
-    float getTime = [playTime floatValue]*60;
+    float getTime = [playTime floatValue]*60*60;
     if (self.allTime > getTime) {
         [self stopSong];
         return;
