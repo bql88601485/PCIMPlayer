@@ -39,4 +39,7 @@ typedef void(^PlayEvent)(TAGPlayerStatus status);
 
 - (void)stopSong;
 
+
+@property (nonatomic, assign) BOOL  isStopPlay;
+
 @end

@@ -11,6 +11,7 @@
 #import "TAGPlayer.h"
 #import "PlaySongListVC.h"
 #import "SettingVC.h"
+#import "MZTimerLabel.h"
 #define IMP_WEAK_SELF(type) __weak type *weak_self=self;
 
 static ViewController   *stationSelf = nil;
@@ -23,7 +24,6 @@ static ViewController   *stationSelf = nil;
 @property (weak, nonatomic) IBOutlet UIButton *playTmpButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
-
 
 @property (weak, nonatomic) IBOutlet UILabel *playingName;
 @property (weak, nonatomic) IBOutlet UILabel *tmerTimeShow;
@@ -71,9 +71,7 @@ static ViewController   *stationSelf = nil;
             [weak_self playTmpSong:nil];
         }else{
             if ([Tool getAutoPlaying]) {
-                NSString *str = [NSString stringWithFormat:@"%zd",[Tool getNowHour]];
-                str = [str stringByReplacingOccurrencesOfString:@"0" withString:@""];
-                [[PlaySongListVC shareSonglist] getAutoModel_Next_Song:str];
+                [[PlaySongListVC shareSonglist] getAutoModel_Next_Song:[PlaySongListVC shareSonglist].songNameAuto];
             }else{
                [Tool getNextSongName];
             }
@@ -81,6 +79,33 @@ static ViewController   *stationSelf = nil;
         }
         
     };
+}
+- (void)beginplayDaojishi{
+    
+    _TimeDjshi = [[MZTimerLabel alloc] initWithLabel:_showDaojishiTier andTimerType:MZTimerLabelTypeTimer];
+    
+    CGFloat time = [[[PlaySongListVC shareSonglist] playingTime] floatValue];
+    
+    [_TimeDjshi setCountDownTime:time*60];
+    _TimeDjshi.resetTimerAfterFinish = NO;
+    _TimeDjshi.delegate = self;
+    
+    [_TimeDjshi  start];
+    
+}
+-(void)timerLabel:(MZTimerLabel*)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime{
+    
+    if ([[Tool getbofangliebiaomoshi] intValue] == 1 && [[Tool getliebiaoneimoshi] intValue] == 1) {
+        NSString *str = [NSString stringWithFormat:@"%@-%zd",[PlaySongListVC shareSonglist].songNameAuto,[PlaySongListVC shareSonglist].kplayRow + 1];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:str forKey:@"========================="];
+    }
+    //时间到了 需要停止播放 并做一系列存储功能
+    [self.player stopSong];
+    
+    self.player.isStopPlay = YES;
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -139,6 +164,10 @@ static ViewController   *stationSelf = nil;
 // 接收远程控制事件
 - (void)remoteControlReceivedWithEvent:(UIEvent *)event
 {
+    if ([Tool getAutoPlaying]) {
+        return;
+    }
+    
     if (event.type == UIEventTypeRemoteControl) {
         switch (event.subtype) {
             case UIEventSubtypeRemoteControlPlay:
@@ -221,6 +250,10 @@ static ViewController   *stationSelf = nil;
 //播放示例音乐
 - (IBAction)playTmpSong:(id)sender {
     
+    if ([Tool getAutoPlaying]) {
+        return;
+    }
+    
     _playingDemoSong = YES;
     
     NSURL *nameStr = [Tool getAppSongName:@"实例音乐Demo - 纯音乐版" type:@"mp3"];
@@ -250,9 +283,7 @@ static ViewController   *stationSelf = nil;
         
         [Tool playSongAuto];
         //设定定时器
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:5.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
-        [self.timer setFireDate:[NSDate date]];
-        
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
         [self.timer fire]; // 触发
     }
 }

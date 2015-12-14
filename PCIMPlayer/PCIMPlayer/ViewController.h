@@ -7,13 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import "MZTimerLabel.h"
+@interface ViewController : UIViewController<MZTimerLabelDelegate>
 
 @property (nonatomic , assign) BOOL  playingDemoSong;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *auteOrYourButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomY;
+
+@property (strong, nonatomic) MZTimerLabel *TimeDjshi;
+
+@property (weak, nonatomic) IBOutlet UILabel *showDaojishiTier;
+
 + (instancetype )shareVC;
+
+- (void)beginplayDaojishi;
 
 @end
 

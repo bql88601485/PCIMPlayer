@@ -10,6 +10,8 @@
 #import "PlaySongListVC.h"
 #import "CLTree.h"
 #import "SettingVC.h"
+#import "ViewController.h"
+#import "TAGPlayer.h"
 #define KEY_USER_LAST_SONG_NAME @"KEY_USER_LAST_SONG_NAME"
 
 @implementation Tool
@@ -135,10 +137,13 @@
     NSDate *now = [NSDate date];
     NSLog(@"now date is: %@", now);
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour fromDate:now];
+    NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate:now];
     NSInteger hour = [dateComponent hour];
     
-    return hour;
+    if ([dateComponent minute] >= 0 && [dateComponent minute] <= 1) {
+        return hour;
+    }
+    return -1;
     
 }
 
@@ -150,7 +155,8 @@
         NSString *str = [[[SettingVC shareSetting] TimeArray] objectAtIndex:i];
         str = [[str componentsSeparatedByString:@":"] firstObject];
         if ([str intValue] == [Tool getNowHour]) {
-            
+            [PlaySongListVC  shareSonglist].kplayRow = 0;
+            [TAGPlayer shareTAGPlayer].isStopPlay = NO;
             songlist.songNameAuto = str;
             switch (i) {
                 case 0:
@@ -174,6 +180,25 @@
                 default:
                     break;
             }
+            
+            
+            [[ViewController shareVC] beginplayDaojishi];
+            
+            
+            if ([[Tool getbofangliebiaomoshi] intValue] == 1 && [[Tool getliebiaoneimoshi] intValue] == 1){
+            
+                NSString *str1 = [[NSUserDefaults standardUserDefaults] objectForKey:@"========================="];
+                if (str1) {
+                    
+                    NSArray *array = [str1 componentsSeparatedByString:@"-"];
+                    
+                    if ([[array firstObject] isEqualToString:str]) {
+                        [PlaySongListVC shareSonglist].kplayRow = [[array objectAtIndex:1] intValue];
+                    }
+                }
+            }
+            
+            
             [songlist getAutoModel_Next_Song:str];
             
             return;

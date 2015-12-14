@@ -141,10 +141,11 @@
                                     <constraint firstItem="ies-vV-Hxo" firstAttribute="top" secondItem="ESX-CE-r6F" secondAttribute="top" id="w6e-qh-Lae"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定时时间倒计时显示 ： 00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-mc-4dO">
-                                <rect key="frame" x="20" y="469" width="580" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="定时时间倒计时显示:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-mc-4dO">
+                                <rect key="frame" x="20" y="469" width="146" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="IaE-oW-Buv"/>
+                                    <constraint firstAttribute="width" constant="146" id="RWi-HW-ORV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.12941176469999999" green="0.47450980390000003" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,6 +247,16 @@
                                     <constraint firstAttribute="bottom" secondItem="91Y-N9-tue" secondAttribute="bottom" constant="-2" id="xt9-qI-UkX"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0S-0L-F1H">
+                                <rect key="frame" x="163" y="459" width="171" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="171" id="cmm-On-1q7"/>
+                                    <constraint firstAttribute="height" constant="40" id="utJ-pq-mnF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" red="0.1137254902" green="0.40784313729999999" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078430000007" green="0.14117647059999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -258,14 +269,21 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fJi-mc-4dO" secondAttribute="trailing" constant="-20" id="RAI-zt-ONT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yey-5y-8B6" secondAttribute="bottom" constant="10" id="Svw-xt-gXj"/>
                             <constraint firstItem="fJi-mc-4dO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UBn-LI-9w8"/>
+                            <constraint firstItem="Yey-5y-8B6" firstAttribute="top" secondItem="v0S-0L-F1H" secondAttribute="bottom" constant="1" id="dAB-Li-Boc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ESX-CE-r6F" secondAttribute="trailing" constant="-20" id="dr5-E7-Aq4"/>
                             <constraint firstItem="9We-GH-ZIN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ePT-d0-YYU"/>
+                            <constraint firstItem="v0S-0L-F1H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="143" id="ehS-6R-sb5"/>
                             <constraint firstItem="Yey-5y-8B6" firstAttribute="top" secondItem="fJi-mc-4dO" secondAttribute="bottom" constant="10" id="jtv-my-dpH"/>
                             <constraint firstItem="9We-GH-ZIN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="lHC-OH-fDT"/>
                             <constraint firstItem="CGr-gy-75e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="qfi-jU-bSC"/>
                             <constraint firstItem="fJi-mc-4dO" firstAttribute="top" secondItem="ESX-CE-r6F" secondAttribute="bottom" constant="50" id="uzw-SC-ZWv"/>
                             <constraint firstItem="ESX-CE-r6F" firstAttribute="top" secondItem="CGr-gy-75e" secondAttribute="bottom" constant="20" id="yde-8c-HvZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RAI-zt-ONT"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="auteOrYourButton" destination="c0L-Gv-bMU" id="ORm-Rg-KD7"/>
@@ -276,6 +294,7 @@
                         <outlet property="playTmpButton" destination="rKh-dc-NPd" id="Q2g-H7-ZG7"/>
                         <outlet property="playingName" destination="ZLh-dB-yei" id="JOH-IF-AC0"/>
                         <outlet property="sesytemButton" destination="liY-ml-NRx" id="Ojm-Dh-H1Z"/>
+                        <outlet property="showDaojishiTier" destination="v0S-0L-F1H" id="6ZE-fq-Kq6"/>
                         <outlet property="timeStr" destination="C4g-qz-qvv" id="V33-xX-zwM"/>
                         <outlet property="tmerTimeShow" destination="fJi-mc-4dO" id="IDt-io-VQ9"/>
                     </connections>
