@@ -8,6 +8,7 @@
 
 #import "TAGPlayer.h"
 #import "Tool.h"
+#import "PlaySongListVC.h"
 static TAGPlayer *staticSelf = nil;
 
 
@@ -15,7 +16,11 @@ static TAGPlayer *staticSelf = nil;
 
 @property (nonatomic, strong) NSTimer* timer;
 
+@property (nonatomic, assign) float allTime;
+
 @end
+
+
 
 
 @implementation TAGPlayer
@@ -133,6 +138,9 @@ static TAGPlayer *staticSelf = nil;
     
     [self updatePlayOrPauseBtn:NO];
     
+    
+    self.allTime = 0;
+    
 }
 - (void )playOrPause:(id)sender {
     
@@ -195,6 +203,14 @@ static TAGPlayer *staticSelf = nil;
     }
     
     
+    self.allTime++;
+    
+    NSString *playTime = [[PlaySongListVC shareSonglist] playingTime];
+    float getTime = [playTime floatValue]*60;
+    if (self.allTime > getTime) {
+        [self stopSong];
+        return;
+    }
     
     
 //    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);

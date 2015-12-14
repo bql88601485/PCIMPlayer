@@ -132,8 +132,6 @@
 }
 + (NSInteger )getNowHour{
 
-    return 6;
-    
     NSDate *now = [NSDate date];
     NSLog(@"now date is: %@", now);
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -154,7 +152,28 @@
         if ([str intValue] == [Tool getNowHour]) {
             
             songlist.songNameAuto = str;
-            
+            switch (i) {
+                case 0:
+                    songlist.playingTime = [Tool getdiyiciChang];
+                    break;
+                case 1:
+                    songlist.playingTime = [Tool getdierciChang];
+                    break;
+                case 2:
+                    songlist.playingTime = [Tool getdisanciChang];
+                    break;
+                case 3:
+                    songlist.playingTime = [Tool getdisiciChang];
+                    break;
+                case 4:
+                    songlist.playingTime = [Tool getdiwuciChang];
+                    break;
+                case 5:
+                    songlist.playingTime = [Tool getdiliuciChang];
+                    break;
+                default:
+                    break;
+            }
             [songlist getAutoModel_Next_Song:str];
             
             return;

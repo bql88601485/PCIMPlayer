@@ -46,6 +46,8 @@ typedef void(^ChangeSong)(NSString *songName,NSString *path);
 
 @property (nonatomic, strong) NSString *songNameAuto;
 
+@property (nonatomic, strong) NSString *playingTime;
+
 - (void)getAutoModel_Next_Song:(NSString *)top;
 
 @end

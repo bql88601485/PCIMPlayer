@@ -16,7 +16,9 @@
 static ViewController   *stationSelf = nil;
 
 @interface ViewController ()
-
+{
+   
+}
 @property (weak, nonatomic) IBOutlet UIButton *sesytemButton;
 @property (weak, nonatomic) IBOutlet UIButton *playTmpButton;
 
@@ -35,6 +37,8 @@ static ViewController   *stationSelf = nil;
 @property (strong, nonatomic) TAGPlayer *player;
 
 @property (strong, nonatomic) SettingVC *setVC;
+
+@property (strong, nonatomic) NSTimer *timer;
 
 @end
 
@@ -235,7 +239,8 @@ static ViewController   *stationSelf = nil;
             _bottomY.constant = 10;
         }];
         
-        
+        // 暂停定时器
+        self.timer.fireDate = [NSDate distantFuture];
         
     }else{
         [Tool setAutoPlaying:[NSNumber numberWithBool:YES]];
@@ -243,6 +248,19 @@ static ViewController   *stationSelf = nil;
             _bottomY.constant = -90;
         }];
         
+        [Tool playSongAuto];
+        //设定定时器
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:5.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
+        [self.timer setFireDate:[NSDate date]];
+        
+        [self.timer fire]; // 触发
+    }
+}
+- (void)qidongdingshi
+{
+    if (self.player.musicPlayer.isPlaying) {
+        
+    }else{
         [Tool playSongAuto];
     }
 }
