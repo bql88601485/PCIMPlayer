@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Tool.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
-    
+    [Tool setAutoPlaying:[NSNumber numberWithBool:NO]];
   
     NSError *setCategoryErr = nil;
     NSError *activationErr  = nil;

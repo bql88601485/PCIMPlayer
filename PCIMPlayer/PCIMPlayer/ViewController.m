@@ -17,8 +17,6 @@ static ViewController   *stationSelf = nil;
 
 @interface ViewController ()
 
-
-
 @property (weak, nonatomic) IBOutlet UIButton *sesytemButton;
 @property (weak, nonatomic) IBOutlet UIButton *playTmpButton;
 
@@ -29,10 +27,6 @@ static ViewController   *stationSelf = nil;
 @property (weak, nonatomic) IBOutlet UILabel *tmerTimeShow;
 @property (weak, nonatomic) IBOutlet UILabel *palyingNewName;
 @property (weak, nonatomic) IBOutlet UILabel *timeStr;
-
-
-@property (weak, nonatomic) IBOutlet UISegmentedControl *auteOrYourButton;
-
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 
@@ -72,7 +66,14 @@ static ViewController   *stationSelf = nil;
         if (weak_self.playingDemoSong) {
             [weak_self playTmpSong:nil];
         }else{
-            [Tool getNextSongName];
+            if ([Tool getAutoPlaying]) {
+                NSString *str = [NSString stringWithFormat:@"%zd",[Tool getNowHour]];
+                str = [str stringByReplacingOccurrencesOfString:@"0" withString:@""];
+                [[PlaySongListVC shareSonglist] getAutoModel_Next_Song:str];
+            }else{
+               [Tool getNextSongName];
+            }
+            
         }
         
     };
@@ -118,6 +119,15 @@ static ViewController   *stationSelf = nil;
             [weak_self SongName:songName];
         }
     };
+    
+    
+    if ([Tool getAutoPlaying]) {
+        [_auteOrYourButton setSelectedSegmentIndex:1];
+        [Tool setAutoPlaying:[NSNumber numberWithBool:YES]];
+        [UIView animateWithDuration:0.35 animations:^{
+            _bottomY.constant = -90;
+        }];
+    }
     
 }
 
@@ -215,9 +225,26 @@ static ViewController   *stationSelf = nil;
     [self SongName:@"实例音乐Demo - 纯音乐版"];
 }
 //自动手动切换
-- (IBAction)auteOrYourEvent:(id)sender {
+- (IBAction)auteOrYourEvent:(UISegmentedControl *)sender {
     
+    [self.player stopSong];
     
+    if (sender.selectedSegmentIndex == 0) {
+        [Tool setAutoPlaying:[NSNumber numberWithBool:NO]];
+        [UIView animateWithDuration:0.35 animations:^{
+            _bottomY.constant = 10;
+        }];
+        
+        
+        
+    }else{
+        [Tool setAutoPlaying:[NSNumber numberWithBool:YES]];
+        [UIView animateWithDuration:0.35 animations:^{
+            _bottomY.constant = -90;
+        }];
+        
+        [Tool playSongAuto];
+    }
 }
 //下一首
 - (IBAction)NextButton:(id)sender {

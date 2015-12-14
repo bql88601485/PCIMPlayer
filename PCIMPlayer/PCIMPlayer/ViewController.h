@@ -11,7 +11,8 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic , assign) BOOL  playingDemoSong;
-
+@property (weak, nonatomic) IBOutlet UISegmentedControl *auteOrYourButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomY;
 + (instancetype )shareVC;
 
 @end

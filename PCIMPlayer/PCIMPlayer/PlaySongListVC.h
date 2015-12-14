@@ -33,4 +33,19 @@ typedef void(^ChangeSong)(NSString *songName,NSString *path);
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+
+
+//适应切换自动模式状态功能数据
+
+@property (nonatomic, strong) NSArray *item_2_Array;
+@property (nonatomic, strong) NSMutableArray *item_3_Array;
+@property (nonatomic, strong) NSMutableArray *item_Tmp2_Array;
+
+@property (nonatomic, assign) NSInteger kplayRow;
+
+@property (nonatomic, strong) NSString *songNameAuto;
+
+- (void)getAutoModel_Next_Song:(NSString *)top;
+
 @end

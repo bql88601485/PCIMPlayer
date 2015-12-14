@@ -9,7 +9,7 @@
 #import "SettingVC.h"
 #import "Tool.h"
 #import "MyPickerView.h"
-
+#import "RCToastView.h"
 
 typedef struct MYd {
     __unsafe_unretained UITextField *select;
@@ -68,6 +68,8 @@ static SettingVC *staticSelf = nil;
     
     _setTablevewi.backgroundView=nil;
     
+    _TimeArray = [NSMutableArray arrayWithObjects:[Tool getdiyici],[Tool getdierci],[Tool getdisanci],[Tool getdisici],[Tool getdiwuci],[Tool getdiliuci], nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,6 +92,10 @@ static SettingVC *staticSelf = nil;
         self.view.alpha = 0.2;
         self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
     }];
+    
+    
+    _TimeArray = [NSMutableArray arrayWithObjects:[Tool getdiyici],[Tool getdierci],[Tool getdisanci],[Tool getdisici],[Tool getdiwuci],[Tool getdiliuci], nil];
+    
 }
 
 
@@ -321,7 +327,12 @@ static SettingVC *staticSelf = nil;
 #pragma mark - ssss
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     
-    
+    if ([Tool getAutoPlaying]) {
+        
+        ToastViewMessage(@"请先切换到手动模式");
+        
+        return NO;
+    }
     
     NSInteger tag = textField.tag;
     

@@ -11,6 +11,7 @@
 #import "Tool.h"
 #import "RCToastView.h"
 #import "ViewController.h"
+#import "NSMutableArray+Shuffling.h"
 static PlaySongListVC *stataicSelf = nil;
 
 @interface PlaySongListVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -204,7 +205,8 @@ static PlaySongListVC *stataicSelf = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    _kplayRow = 0;
+    _item_3_Array = [[NSMutableArray alloc] init];
     [self addTestData];//添加演示数据
     [self reloadDataForDisplayArray];//初始化将要显示的数据
 //    [self reloadAllYINYUE];
@@ -342,6 +344,16 @@ static PlaySongListVC *stataicSelf = nil;
         return;
     }
     if(node.type == 2){
+        
+        if (!_upIsOk) {
+            if ([Tool getAutoPlaying]) {
+                
+                ToastViewMessage(@"请先切换到手动模式");
+                
+                return;
+            }
+        }
+        
         
         [ViewController shareVC].playingDemoSong = NO;
         
@@ -487,4 +499,124 @@ static PlaySongListVC *stataicSelf = nil;
     _alldisplayArray = [NSArray arrayWithArray:tmp];
 }
 
+
+//提供自动模式下播放选择
+- (void)getTwoMenuArraylist:(NSString *)topName{
+
+    for (CLTreeViewNode *node in _dataArray) {
+        CLTreeView_LEVEL0_Model *data = node.nodeData;
+        NSString *str = data.name;
+        if ([str isEqualToString:topName]) {
+            _item_2_Array = [NSArray arrayWithArray:node.sonNodes];
+            [_item_3_Array removeAllObjects];
+            _item_Tmp2_Array = nil;
+            return;
+        }
+    }
+}
+
+- (void)getAutoModel_Next_Song:(NSString *)top{
+
+    if ([_songNameAuto intValue] != [top intValue]) {
+        _item_2_Array = nil;
+    }
+    top = [NSString stringWithFormat:@"%@点",top];
+
+    if (nil == _item_2_Array) {
+       [self getTwoMenuArraylist:top];
+    }
+    if (!_item_2_Array) {
+        
+        ToastViewMessage(@"检查您的文件的名字");
+        [[[ViewController shareVC] auteOrYourButton] setSelectedSegmentIndex:0];
+        
+        [Tool setAutoPlaying:[NSNumber numberWithBool:NO]];
+        [UIView animateWithDuration:0.35 animations:^{
+            [ViewController shareVC].bottomY.constant = 10;
+        }];
+    
+        return;
+    }
+    
+    NSMutableArray *itme3 = [[NSMutableArray alloc] init];
+    //查看模式 1循环 ， 2 随机
+    if ([[Tool getbofangliebiaomoshi] intValue] == 1) {
+        
+        if ([[Tool getliebiaoneimoshi] intValue] == 1) {
+            if ([_item_3_Array count] == 0) {
+                for(CLTreeViewNode *node2 in _item_2_Array){
+                    for(CLTreeViewNode *node3 in node2.sonNodes){
+                        [_item_3_Array addObject:node3];
+                    }
+                }
+            }
+        }else{
+            if ([_item_3_Array count] == 0) {
+                for(CLTreeViewNode *node2 in _item_2_Array){
+                    for(int i=0;i<[node2.sonNodes count];i++){
+                        CLTreeViewNode *node3 = [node2.sonNodes objectAtIndex:i];
+                        [itme3 addObject:node3];
+                        if (i+1 == [node2.sonNodes count]) {
+                            [itme3 shuffle];//做随机
+                            [_item_3_Array addObjectsFromArray:itme3];
+                            [itme3 removeAllObjects];
+                        }
+                    }
+                }
+            }
+        }
+    }else{
+        
+        if (nil == _item_Tmp2_Array) {
+            _item_Tmp2_Array = [NSMutableArray arrayWithArray:_item_2_Array];
+            [_item_Tmp2_Array shuffle];
+            
+            if ([[Tool getliebiaoneimoshi] intValue] == 1) {
+                if ([_item_3_Array count] == 0) {
+                    for(CLTreeViewNode *node2 in _item_Tmp2_Array){
+                        for(CLTreeViewNode *node3 in node2.sonNodes){
+                            [_item_3_Array addObject:node3];
+                        }
+                    }
+                }
+            }else{
+                if ([_item_3_Array count] == 0) {
+                    for(CLTreeViewNode *node2 in _item_Tmp2_Array){
+                        for(int i=0;i<[node2.sonNodes count];i++){
+                            CLTreeViewNode *node3 = [node2.sonNodes objectAtIndex:i];
+                            [itme3 addObject:node3];
+                            if (i+1 == [node2.sonNodes count]) {
+                                [itme3 shuffle];//做随机
+                                [_item_3_Array addObjectsFromArray:itme3];
+                                [itme3 removeAllObjects];
+                            }
+                        }
+                    }
+                }
+            }
+        };
+    }
+    
+    
+    
+    if (_kplayRow >= [_item_3_Array count]) {
+        _kplayRow = 0;
+    }
+    
+    CLTreeViewNode *node3 = [_item_3_Array objectAtIndex:_kplayRow];
+    CLTreeView_LEVEL2_Model *objec = node3.nodeData;
+    
+    NSString *path = [NSString stringWithFormat:@"%@/%@/%@",objec.topName,objec.signture,objec.name];
+    
+    if (_kchangeSong) {
+        
+        path = [Tool  getPlayName:path];
+        self.kchangeSong(objec.name,path);
+        
+        _kplayRow++;
+    }
+
+}
+
 @end
+

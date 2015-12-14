@@ -9,7 +9,7 @@
 #import "Tool.h"
 #import "PlaySongListVC.h"
 #import "CLTree.h"
-
+#import "SettingVC.h"
 #define KEY_USER_LAST_SONG_NAME @"KEY_USER_LAST_SONG_NAME"
 
 @implementation Tool
@@ -130,8 +130,39 @@
     
     return files;
 }
++ (NSInteger )getNowHour{
 
+    return 6;
+    
+    NSDate *now = [NSDate date];
+    NSLog(@"now date is: %@", now);
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour fromDate:now];
+    NSInteger hour = [dateComponent hour];
+    
+    return hour;
+    
+}
 
++ (void)playSongAuto{
+    
+    PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
+    
+    for (int i=0;i<[[Tool getMeiTianCishu] intValue];i++) {
+        NSString *str = [[[SettingVC shareSetting] TimeArray] objectAtIndex:i];
+        str = [[str componentsSeparatedByString:@":"] firstObject];
+        if ([str intValue] == [Tool getNowHour]) {
+            
+            songlist.songNameAuto = str;
+            
+            [songlist getAutoModel_Next_Song:str];
+            
+            return;
+        }
+    }
+    
+    
+}
 
 + (NSString *)getNextSongName{
     
@@ -229,6 +260,18 @@
     
     return @"";
     return [[NSUserDefaults standardUserDefaults] objectForKey:KEY_USER_LAST_SONG_NAME];
+}
+
++ (void)setAutoPlaying:(NSNumber *)num{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:num forKey:@"papapapapapapapapapa"];
+    [ud synchronize];
+}
++ (BOOL )getAutoPlaying{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"papapapapapapapapapa"]) {
+        return [[[NSUserDefaults standardUserDefaults] objectForKey:@"papapapapapapapapapa"] boolValue];
+    }
+    return NO;
 }
 
 #pragma mark -  系统设置

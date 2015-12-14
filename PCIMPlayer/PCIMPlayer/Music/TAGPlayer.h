@@ -37,4 +37,6 @@ typedef void(^PlayEvent)(TAGPlayerStatus status);
 
 - (void )playOrPause:(id)sender;
 
+- (void)stopSong;
+
 @end

@@ -24,16 +24,19 @@
 
 + (NSString *)getPlayName:(NSString *)songName;
 
++ (NSInteger )getNowHour;
 
 + (NSString *)getNextSongName;
 
 + (NSString *)getUpSongName;
 
++ (void)playSongAuto;
 
 + (void)setLastPlayName:(NSDictionary *)name;
 + (NSDictionary *)lastPlayName;
 
-
++ (void)setAutoPlaying:(NSNumber *)num;
++ (BOOL )getAutoPlaying;
 //系统设置
 + (void)setMeiTianCishu:(NSString *)num;
 + (NSString *)getMeiTianCishu;

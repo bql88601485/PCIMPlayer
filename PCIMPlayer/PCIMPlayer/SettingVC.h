@@ -12,6 +12,9 @@
 
 + (instancetype )shareSetting;
 
+
+@property (nonatomic, strong)NSMutableArray *TimeArray;
+
 - (void)showVc;
 - (void)dismissVc;
 

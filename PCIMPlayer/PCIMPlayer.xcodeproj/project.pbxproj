@@ -88,6 +88,7 @@
 		E5D05E691C1861630084B92D /* Level2_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E531C1861630084B92D /* Level2_Cell.xib */; };
 		E5D05E6D1C1866230084B92D /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D05E6B1C1866230084B92D /* SettingVC.m */; };
 		E5D05E6E1C1866230084B92D /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E6C1C1866230084B92D /* SettingVC.xib */; };
+		E5F257051C1EB7E700A63402 /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F257041C1EB7E700A63402 /* NSMutableArray+Shuffling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -194,6 +195,8 @@
 		E5D05E6A1C1866230084B92D /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		E5D05E6B1C1866230084B92D /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		E5D05E6C1C1866230084B92D /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
+		E5F257031C1EB7E700A63402 /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
+		E5F257041C1EB7E700A63402 /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +292,8 @@
 				E5D05E281C183DE60084B92D /* Tool.m */,
 				E5D05DA71C1809520084B92D /* TAGPlayer.h */,
 				E5D05DA81C1809520084B92D /* TAGPlayer.m */,
+				E5F257031C1EB7E700A63402 /* NSMutableArray+Shuffling.h */,
+				E5F257041C1EB7E700A63402 /* NSMutableArray+Shuffling.m */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -544,6 +549,7 @@
 				E536C0451C1C276E00398360 /* MyPickerView.m in Sources */,
 				E536C0461C1C276E00398360 /* WheelView.m in Sources */,
 				E536C0441C1C276E00398360 /* MagnifierView.m in Sources */,
+				E5F257051C1EB7E700A63402 /* NSMutableArray+Shuffling.m in Sources */,
 				E5D05E571C1861630084B92D /* CLTreeView_LEVEL1_Model.m in Sources */,
 				E5D05D851C1802B50084B92D /* AppDelegate.m in Sources */,
 				E5D05E291C183DE60084B92D /* Tool.m in Sources */,

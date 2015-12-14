@@ -7,6 +7,7 @@
 //
 
 #import "TAGPlayer.h"
+#import "Tool.h"
 static TAGPlayer *staticSelf = nil;
 
 
@@ -180,11 +181,20 @@ static TAGPlayer *staticSelf = nil;
      */
 
     //音量逐渐变大
-    if (self.musicPlayer.currentTime >= 0 && self.musicPlayer.currentTime <= 10) {
-        self.musicPlayer.volume = self.musicPlayer.currentTime/10;
-    }else if (self.musicPlayer.duration - self.musicPlayer.currentTime <= 10){
-        self.musicPlayer.volume = (self.musicPlayer.duration - self.musicPlayer.currentTime)/10;
+    
+    if ([[Tool getyinxiao] boolValue]) {
+        if (self.musicPlayer.currentTime >= 0 && self.musicPlayer.currentTime <= 10) {
+            self.musicPlayer.volume = self.musicPlayer.currentTime/10;
+        }else if (self.musicPlayer.duration - self.musicPlayer.currentTime <= 10){
+            self.musicPlayer.volume = (self.musicPlayer.duration - self.musicPlayer.currentTime)/10;
+        }
+    }else{
+        if (self.musicPlayer.volume < 1) {
+            self.musicPlayer.volume = 1;
+        }
     }
+    
+    
     
     
 //    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);
