@@ -156,7 +156,7 @@
         str = [[str componentsSeparatedByString:@":"] firstObject];
         if ([str intValue] == [Tool getNowHour]) {
             
-            [TAGPlayer shareTAGPlayer].tag = 2;
+            [TAGPlayer shareTAGPlayer].tagName = 2;
             
             [PlaySongListVC  shareSonglist].kplayRow = 0;
             [TAGPlayer shareTAGPlayer].isStopPlay = NO;

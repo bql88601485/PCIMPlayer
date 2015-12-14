@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PCIMPlayer/ViewController.m"
-            timestampString = "471790862.830895"
+            timestampString = "471792633.61977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "325"
-            endingLineNumber = "325"
-            landmarkName = "-upButtonEvent:"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
+            landmarkName = "-playButtonEvent:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

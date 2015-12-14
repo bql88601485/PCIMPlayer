@@ -18,7 +18,7 @@ static ViewController   *stationSelf = nil;
 
 @interface ViewController ()
 {
-    BOOL playSong;
+    
    
 }
 @property (weak, nonatomic) IBOutlet UIButton *sesytemButton;
@@ -40,6 +40,8 @@ static ViewController   *stationSelf = nil;
 @property (strong, nonatomic) SettingVC *setVC;
 
 @property (strong, nonatomic) NSTimer *timer;
+
+@property (assign, nonatomic) BOOL demoPlaySong;
 
 @end
 
@@ -68,9 +70,14 @@ static ViewController   *stationSelf = nil;
     IMP_WEAK_SELF(ViewController);
     self.player.ktouchEvent = ^(TAGPlayerStatus status){
     
+        
         if (weak_self.playingDemoSong) {
             [weak_self playTmpSong:nil];
-        }else{
+        }
+        else if (weak_self.player.tagName == 1){
+            [weak_self demoSong];
+        }
+        else{
             if ([Tool getAutoPlaying]) {
                 [[PlaySongListVC shareSonglist] getAutoModel_Next_Song:[PlaySongListVC shareSonglist].songNameAuto];
             }else{
@@ -291,21 +298,20 @@ static ViewController   *stationSelf = nil;
 }
 - (void)qidongdingshi
 {
-    if (self.player.musicPlayer.isPlaying && self.player.tag != 1) {
+    if (self.player.musicPlayer.isPlaying && self.player.tagName != 1) {
         
     }else{
         [Tool playSongAuto];
     }
 }
 - (void)demoSong{
-    playSong = YES;
     
-    NSURL *nameStr = [Tool getAppSongName:@"10s" type:@"mp3"];
+    NSURL *nameStr = [Tool getAppSongName:@"demodemo" type:@"mp3"];
     [self.player PlayerName:nameStr];
     
     [self SongName:@" "];
     
-    self.player.tag = 1;
+    self.player.tagName = 1;
 }
 //下一首
 - (IBAction)NextButton:(id)sender {
