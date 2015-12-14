@@ -18,6 +18,7 @@ static ViewController   *stationSelf = nil;
 
 @interface ViewController ()
 {
+    BOOL playSong;
    
 }
 @property (weak, nonatomic) IBOutlet UIButton *sesytemButton;
@@ -105,7 +106,7 @@ static ViewController   *stationSelf = nil;
     
     self.player.isStopPlay = YES;
     
-    
+    [self demoSong];
 }
 
 - (void)viewDidLoad {
@@ -281,7 +282,8 @@ static ViewController   *stationSelf = nil;
             _bottomY.constant = -90;
         }];
         
-        [Tool playSongAuto];
+        [self demoSong];
+        
         //设定定时器
         self.timer=[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
         [self.timer fire]; // 触发
@@ -289,11 +291,21 @@ static ViewController   *stationSelf = nil;
 }
 - (void)qidongdingshi
 {
-    if (self.player.musicPlayer.isPlaying) {
+    if (self.player.musicPlayer.isPlaying && self.player.tag != 1) {
         
     }else{
         [Tool playSongAuto];
     }
+}
+- (void)demoSong{
+    playSong = YES;
+    
+    NSURL *nameStr = [Tool getAppSongName:@"10s" type:@"mp3"];
+    [self.player PlayerName:nameStr];
+    
+    [self SongName:@" "];
+    
+    self.player.tag = 1;
 }
 //下一首
 - (IBAction)NextButton:(id)sender {

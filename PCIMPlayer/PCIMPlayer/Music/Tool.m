@@ -147,7 +147,7 @@
     
 }
 
-+ (void)playSongAuto{
++ (BOOL )playSongAuto{
     
     PlaySongListVC *songlist = [PlaySongListVC shareSonglist];
     
@@ -155,6 +155,9 @@
         NSString *str = [[[SettingVC shareSetting] TimeArray] objectAtIndex:i];
         str = [[str componentsSeparatedByString:@":"] firstObject];
         if ([str intValue] == [Tool getNowHour]) {
+            
+            [TAGPlayer shareTAGPlayer].tag = 2;
+            
             [PlaySongListVC  shareSonglist].kplayRow = 0;
             [TAGPlayer shareTAGPlayer].isStopPlay = NO;
             songlist.songNameAuto = str;
@@ -201,11 +204,11 @@
             
             [songlist getAutoModel_Next_Song:str];
             
-            return;
+            return YES;
         }
     }
     
-    
+    return NO;
 }
 
 + (NSString *)getNextSongName{

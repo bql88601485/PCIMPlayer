@@ -30,7 +30,7 @@
 
 + (NSString *)getUpSongName;
 
-+ (void)playSongAuto;
++ (BOOL )playSongAuto;
 
 + (void)setLastPlayName:(NSDictionary *)name;
 + (NSDictionary *)lastPlayName;

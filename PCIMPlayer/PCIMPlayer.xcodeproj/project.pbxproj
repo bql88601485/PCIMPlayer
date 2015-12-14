@@ -90,6 +90,7 @@
 		E5D05E6E1C1866230084B92D /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D05E6C1C1866230084B92D /* SettingVC.xib */; };
 		E5F257051C1EB7E700A63402 /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F257041C1EB7E700A63402 /* NSMutableArray+Shuffling.m */; };
 		E5F257081C1F0BA200A63402 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F257071C1F0BA200A63402 /* MZTimerLabel.m */; };
+		E5F2570A1C1F0BA200A63402 /* 10s.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E5F257091C1F0BA200A63402 /* 10s.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +201,7 @@
 		E5F257041C1EB7E700A63402 /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 		E5F257061C1F0BA200A63402 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
 		E5F257071C1F0BA200A63402 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
+		E5F257091C1F0BA200A63402 /* 10s.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 10s.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		E5D05D9A1C1802CA0084B92D /* resour */ = {
 			isa = PBXGroup;
 			children = (
+				E5F257091C1F0BA200A63402 /* 10s.mp3 */,
 				E5D05E311C185EFB0084B92D /* 实例音乐Demo - 纯音乐版.mp3 */,
 				E5D05E251C1822D10084B92D /* Qidong@2x.png */,
 			);
@@ -486,6 +489,7 @@
 				E5D05E661C1861630084B92D /* the_arrow.png in Resources */,
 				E5D05E091C1809CB0084B92D /* player_btn_pause_normal@2x.png in Resources */,
 				E5D05E011C1809CB0084B92D /* miniplayer_btn_playlist_normal@2x.png in Resources */,
+				E5F2570A1C1F0BA200A63402 /* 10s.mp3 in Resources */,
 				E5D05E0A1C1809CB0084B92D /* player_btn_play_highlight@2x.png in Resources */,
 				E5D05E081C1809CB0084B92D /* player_btn_pause_highlight@2x.png in Resources */,
 				E5D05E5C1C1861630084B92D /* contacts_collect@2x.png in Resources */,
