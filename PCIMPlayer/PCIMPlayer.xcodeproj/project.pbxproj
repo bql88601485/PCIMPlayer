@@ -685,7 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.sprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "22ca8b2a-4dfe-4cac-acfd-c89377cce741";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -701,7 +701,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.sprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "22ca8b2a-4dfe-4cac-acfd-c89377cce741";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

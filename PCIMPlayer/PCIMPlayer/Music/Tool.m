@@ -135,7 +135,7 @@
 + (NSInteger )getNowHour{
 
     NSDate *now = [NSDate date];
-    NSLog(@"now date is: %@", now);
+//    NSLog(@"now date is: %@", now);
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate:now];
     NSInteger hour = [dateComponent hour];
