@@ -35,6 +35,7 @@ static SettingVC *staticSelf = nil;
 @property (weak, nonatomic) IBOutlet UITableView *setTablevewi;
 
 
+@property (weak, nonatomic) IBOutlet UIView *bgbgbg;
 
 @end
 
@@ -70,6 +71,10 @@ static SettingVC *staticSelf = nil;
     
     _TimeArray = [NSMutableArray arrayWithObjects:[Tool getdiyici],[Tool getdierci],[Tool getdisanci],[Tool getdisici],[Tool getdiwuci],[Tool getdiliuci], nil];
     
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(disasss)];
+    [_bgbgbg addGestureRecognizer:tap];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,6 +91,9 @@ static SettingVC *staticSelf = nil;
         self.view.alpha = 1.0;
         self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     }];
+}
+- (void)disasss{
+    [self dismissVc];
 }
 - (void)dismissVc{
     [UIView animateWithDuration:0.35 animations:^{

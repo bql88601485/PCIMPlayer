@@ -16,6 +16,7 @@ static PlaySongListVC *stataicSelf = nil;
 
 @interface PlaySongListVC ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *bgbgbg;
 
 @end
 
@@ -94,6 +95,9 @@ static PlaySongListVC *stataicSelf = nil;
                     
                     [_dataArray addObject:node0];
                     
+                    node1 = nil;
+                    node1Array = [[NSMutableArray alloc] init];
+                    node2Array = [[NSMutableArray alloc] init];
                     //TODO : 需要换文件夹了
                     topStr = [tmpArr firstObject];
                     
@@ -210,6 +214,9 @@ static PlaySongListVC *stataicSelf = nil;
     [self addTestData];//添加演示数据
     [self reloadDataForDisplayArray];//初始化将要显示的数据
 //    [self reloadAllYINYUE];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(disasss)];
+    [_bgbgbg addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -227,7 +234,13 @@ static PlaySongListVC *stataicSelf = nil;
         self.view.alpha = 0.2;
     }];
 }
-
+- (void)disasss{
+    [UIView animateWithDuration:0.35 animations:^{
+        
+        self.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+        self.view.alpha = 0.2;
+    }];
+}
 
 #pragma mark - tableview delegate
 

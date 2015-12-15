@@ -677,14 +677,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: fang taihu (AWS2B583LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: San Meditech Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = PCIMPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.sprint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sanmeditech.Glucose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "22ca8b2a-4dfe-4cac-acfd-c89377cce741";
+				PROVISIONING_PROFILE = "23426613-4460-4cc3-b179-c0caa7bf832b";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -693,14 +693,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: fang taihu (AWS2B583LQ)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: San Meditech Co., Ltd.";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				INFOPLIST_FILE = PCIMPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sprint.sprint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sanmeditech.Glucose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "22ca8b2a-4dfe-4cac-acfd-c89377cce741";
+				PROVISIONING_PROFILE = "23426613-4460-4cc3-b179-c0caa7bf832b";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PCIMPlayer/ViewController.m"
-            timestampString = "471831977.204926"
+            filePath = "PCIMPlayer/PlaySongListVC.m"
+            timestampString = "471882144.565101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
-            landmarkName = "-playButtonEvent:"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-addTestData"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
