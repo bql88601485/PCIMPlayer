@@ -43,6 +43,14 @@ static ViewController   *stationSelf = nil;
 
 @property (assign, nonatomic) BOOL demoPlaySong;
 
+
+
+@property (strong, nonatomic) MZTimerLabel *daojiXunHuanDay;
+
+@property (strong, nonatomic) MZTimerLabel *daojiJianGeDay;
+
+@property (nonatomic, strong) UILabel *hiddenLable;
+
 @end
 
 @implementation ViewController
@@ -103,17 +111,43 @@ static ViewController   *stationSelf = nil;
 }
 -(void)timerLabel:(MZTimerLabel*)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime{
     
-    if ([[Tool getbofangliebiaomoshi] intValue] == 1 && [[Tool getliebiaoneimoshi] intValue] == 1) {
-        NSString *str = [NSString stringWithFormat:@"%@-%zd",[PlaySongListVC shareSonglist].songNameAuto,[PlaySongListVC shareSonglist].kplayRow + 1];
+    
+    
+    if (timerLabel.tag == 100) {//循环时间结束  进入休眠时间
+        _MyappComeSleep = YES;
         
-        [[NSUserDefaults standardUserDefaults] setObject:str forKey:@"========================="];
+        _daojiJianGeDay = [[MZTimerLabel alloc] initWithLabel:_hiddenLable andTimerType:MZTimerLabelTypeTimer];
+        _daojiJianGeDay.tag = 200;
+        _daojiJianGeDay.delegate = self;
+        _daojiJianGeDay.resetTimerAfterFinish = NO;
+        
+        CGFloat time = [[Tool getjiange] floatValue]*24*60*60;
+        
+        [_daojiJianGeDay setCountDownTime:time];
+        
+        
+        [_daojiJianGeDay start];
+        
+        
     }
-    //时间到了 需要停止播放 并做一系列存储功能
-    [self.player stopSong];
-    
-    self.player.isStopPlay = YES;
-    
-    [self demoSong];
+    else if (timerLabel.tag == 200){
+        _MyappComeSleep = NO;
+        
+        [self demoSong];
+    }
+    else{
+        if ([[Tool getbofangliebiaomoshi] intValue] == 1 && [[Tool getliebiaoneimoshi] intValue] == 1) {
+            NSString *str = [NSString stringWithFormat:@"%@-%zd",[PlaySongListVC shareSonglist].songNameAuto,[PlaySongListVC shareSonglist].kplayRow + 1];
+            
+            [[NSUserDefaults standardUserDefaults] setObject:str forKey:@"========================="];
+        }
+        //时间到了 需要停止播放 并做一系列存储功能
+        [self.player stopSong];
+        
+        self.player.isStopPlay = YES;
+        
+        [self demoSong];
+    }
 }
 
 - (void)viewDidLoad {
@@ -166,6 +200,16 @@ static ViewController   *stationSelf = nil;
         }];
     }
     
+    
+    //用于切换自动模式
+    
+    _hiddenLable = [[UILabel alloc] init];
+    _hiddenLable.frame= CGRectMake(0, 0, 1, 1);
+    _hiddenLable.backgroundColor = [UIColor clearColor];
+    [_hiddenLable setTextColor:[UIColor clearColor]];
+    [self.view addSubview:_hiddenLable];
+    
+    _MyappComeSleep = NO;
 }
 
 
@@ -294,10 +338,26 @@ static ViewController   *stationSelf = nil;
         //设定定时器
         self.timer=[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
         [self.timer fire]; // 触发
+        
+        
+        //触发循环天数
+        _daojiXunHuanDay = [[MZTimerLabel alloc] initWithLabel:_hiddenLable andTimerType:MZTimerLabelTypeTimer];
+        _daojiXunHuanDay.tag = 100;
+        _daojiXunHuanDay.delegate = self;
+        _daojiXunHuanDay.resetTimerAfterFinish = NO;
+        
+        CGFloat time = [[Tool getxunhuan] floatValue]*24*60*60;
+        
+        [_daojiXunHuanDay setCountDownTime:time];
+        [_daojiXunHuanDay start];
     }
 }
 - (void)qidongdingshi
 {
+    if (_MyappComeSleep) {
+        return;
+    }
+    
     if (self.player.musicPlayer.isPlaying && self.player.tagName != 1) {
         
     }else{

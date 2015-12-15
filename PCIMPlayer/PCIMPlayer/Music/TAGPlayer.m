@@ -9,6 +9,7 @@
 #import "TAGPlayer.h"
 #import "Tool.h"
 #import "PlaySongListVC.h"
+#import "ViewController.h"
 static TAGPlayer *staticSelf = nil;
 
 
@@ -104,6 +105,10 @@ static TAGPlayer *staticSelf = nil;
     [self setAudio2SupportBackgroundPlay];
     // 4. 设置锁屏歌曲信息
     [self setupLockScreenSongInfos];
+    
+    if ([[ViewController shareVC] MyappComeSleep]) {
+        return;
+    }
     
     [self playOrPause:nil];
 }

@@ -17,7 +17,6 @@
 
 +(NSURL *)getAppSongName:(NSString *)playName type:(NSString *)type;
 
-
 + (NSString *)getHomeDirectoryPath;
 
 + (NSArray *) getAllFileNames;

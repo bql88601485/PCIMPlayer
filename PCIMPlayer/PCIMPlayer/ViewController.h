@@ -18,6 +18,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *showDaojishiTier;
 
+
+@property (assign, nonatomic) BOOL  MyappComeSleep;
+
+
 + (instancetype )shareVC;
 
 - (void)beginplayDaojishi;
