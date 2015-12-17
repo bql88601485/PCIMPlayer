@@ -138,8 +138,8 @@ static ViewController   *stationSelf = nil;
             [self.timer invalidate];
             self.timer = nil;
         }
-        
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:10.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
+        [self.timer setFireDate:[NSDate date]];
         [self.timer fire]; // 触发
         
     }
