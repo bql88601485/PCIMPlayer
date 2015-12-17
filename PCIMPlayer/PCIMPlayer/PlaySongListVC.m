@@ -12,6 +12,7 @@
 #import "RCToastView.h"
 #import "ViewController.h"
 #import "NSMutableArray+Shuffling.h"
+#import "TAGPlayer.h"
 static PlaySongListVC *stataicSelf = nil;
 
 @interface PlaySongListVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -35,6 +36,7 @@ static PlaySongListVC *stataicSelf = nil;
 
 //添加演示数据
 -(void) addTestData{
+    _songlistName = [[NSMutableArray alloc] init];
     NSArray *array = [Tool getAllFileNames];
     
     NSString *topStr = nil;
@@ -57,10 +59,16 @@ static PlaySongListVC *stataicSelf = nil;
         if ([str isEqualToString:@".DS_Store"]) {
             continue;
         }
+        
         NSArray *tmpArr = [str componentsSeparatedByString:@"/"];
         
         if (tmpArr.count == 1) {//首位
             if (nil == topStr) {
+                
+                NSArray *tmpArr111 = [str componentsSeparatedByString:@"点"];
+                NSString *songname = [NSString stringWithFormat:@"%@:%@",[tmpArr111 firstObject],[tmpArr111 lastObject]];
+                [_songlistName addObject:songname];
+                
                 topStr = [tmpArr firstObject];
                 
                 node0 = [[CLTreeViewNode alloc]init];
@@ -76,6 +84,10 @@ static PlaySongListVC *stataicSelf = nil;
                 
             }else{
                 if (![topStr isEqualToString:tmpArr.firstObject]) {//代表换文件夹了
+                    
+                    NSArray *tmpArr111 = [str componentsSeparatedByString:@"点"];
+                    NSString *songname = [NSString stringWithFormat:@"%@:%@",[tmpArr111 firstObject],[tmpArr111 lastObject]];
+                    [_songlistName addObject:songname];
                     
                     //最后一个入住
                     if (node1Array && node1 && node2Array) {
@@ -519,7 +531,9 @@ static PlaySongListVC *stataicSelf = nil;
     for (CLTreeViewNode *node in _dataArray) {
         CLTreeView_LEVEL0_Model *data = node.nodeData;
         NSString *str = data.name;
-        if ([str isEqualToString:topName]) {
+        NSArray *tmp1 = [str componentsSeparatedByString:@"点"];
+        NSArray *tmp2 = [topName componentsSeparatedByString:@":"];
+        if (([[tmp1 firstObject] intValue] == [[tmp2 firstObject] intValue] )&& ([[tmp1 lastObject] intValue] == [[tmp2 lastObject] intValue])) {
             _item_2_Array = [NSArray arrayWithArray:node.sonNodes];
             [_item_3_Array removeAllObjects];
             _item_Tmp2_Array = nil;
@@ -533,21 +547,17 @@ static PlaySongListVC *stataicSelf = nil;
     if ([_songNameAuto intValue] != [top intValue]) {
         _item_2_Array = nil;
     }
-    top = [NSString stringWithFormat:@"%@点",top];
-
     if (nil == _item_2_Array) {
        [self getTwoMenuArraylist:top];
     }
     if (!_item_2_Array) {
         
         ToastViewMessage(@"检查您的文件的名字");
-        [[[ViewController shareVC] auteOrYourButton] setSelectedSegmentIndex:0];
         
-        [Tool setAutoPlaying:[NSNumber numberWithBool:NO]];
-        [UIView animateWithDuration:0.35 animations:^{
-            [ViewController shareVC].bottomY.constant = 10;
-        }];
-    
+        [TAGPlayer shareTAGPlayer].tagName = 1;
+        [PlaySongListVC  shareSonglist].kplayRow = 0;
+        [TAGPlayer shareTAGPlayer].isStopPlay = YES;
+        
         return;
     }
     

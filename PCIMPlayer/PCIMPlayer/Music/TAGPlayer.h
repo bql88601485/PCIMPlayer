@@ -19,6 +19,12 @@ typedef NS_ENUM(NSUInteger, TAGPlayerStatus) {
     TAGPlayerStatus_Next,
 };
 
+@protocol PlayEvent <NSObject>
+
+- (void)backTouchEvent:(NSNumber * )status;
+
+@end
+
 typedef void(^PlayEvent)(TAGPlayerStatus status);
 
 @interface TAGPlayer : NSObject<AVAudioPlayerDelegate>
@@ -32,6 +38,7 @@ typedef void(^PlayEvent)(TAGPlayerStatus status);
 
 @property (nonatomic, strong) PlayEvent ktouchEvent;
 
+@property (nonatomic, assign) id <PlayEvent> deleagete;
 
 + (instancetype )shareTAGPlayer;
 

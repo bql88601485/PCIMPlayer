@@ -209,9 +209,17 @@ static TAGPlayer *staticSelf = nil;
     
 //    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);
     
-    CGFloat value =self.musicPlayer.currentTime/self.musicPlayer.duration;
+    CGFloat value =self.musicPlayer.duration - self.musicPlayer.currentTime;
     
-    if (value>0.99) {
+    CGFloat value1 =self.musicPlayer.currentTime/self.musicPlayer.duration;
+    
+    if (value <= 1) {
+        
+        [self stopSong];
+        
+        [self nextButtonClick];
+        
+    }else if (value1>0.99) {
         
         [self stopSong];
         
@@ -221,8 +229,8 @@ static TAGPlayer *staticSelf = nil;
 
 - (void)nextButtonClick {
     
-    if (self.ktouchEvent) {
-        self.ktouchEvent(TAGPlayerStatus_Next);
+    if (_deleagete) {
+        [_deleagete performSelector:@selector(backTouchEvent:) withObject:[NSNumber numberWithInteger:TAGPlayerStatus_Next]];
     }
 }
 

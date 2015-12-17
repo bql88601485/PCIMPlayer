@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <Accelerate/Accelerate.h>
+
+
+typedef struct FindSong {
+    NSInteger hour;
+    NSInteger minute;
+    NSInteger nowHour;
+}FindSong;
+
+
 @interface Tool : NSObject
 //高斯模糊效果
 +(UIImage *)blurryImage:(UIImage *)image withBlurLevel:(CGFloat)blur;
@@ -23,7 +32,7 @@
 
 + (NSString *)getPlayName:(NSString *)songName;
 
-+ (NSInteger )getNowHour;
++ (FindSong )getNowHour;
 
 + (NSString *)getNextSongName;
 

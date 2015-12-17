@@ -50,4 +50,6 @@ typedef void(^ChangeSong)(NSString *songName,NSString *path);
 
 - (void)getAutoModel_Next_Song:(NSString *)top;
 
+@property (nonatomic, strong) NSMutableArray *songlistName;
+
 @end

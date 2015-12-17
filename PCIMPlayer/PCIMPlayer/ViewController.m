@@ -12,11 +12,12 @@
 #import "PlaySongListVC.h"
 #import "SettingVC.h"
 #import "MZTimerLabel.h"
+#import "RCToastView.h"
 #define IMP_WEAK_SELF(type) __weak type *weak_self=self;
 
 static ViewController   *stationSelf = nil;
 
-@interface ViewController ()
+@interface ViewController ()<PlayEvent>
 {
     
    
@@ -74,28 +75,25 @@ static ViewController   *stationSelf = nil;
     
     self.player.play_Button = self.playButton;
     
-    
-    IMP_WEAK_SELF(ViewController);
-    self.player.ktouchEvent = ^(TAGPlayerStatus status){
-    
-        
-        if (weak_self.playingDemoSong) {
-            [weak_self playTmpSong:nil];
-        }
-        else if (weak_self.player.tagName == 1){
-            [weak_self demoSong];
-        }
-        else{
-            if ([Tool getAutoPlaying]) {
-                [[PlaySongListVC shareSonglist] getAutoModel_Next_Song:[PlaySongListVC shareSonglist].songNameAuto];
-            }else{
-               [Tool getNextSongName];
-            }
-            
-        }
-        
-    };
+    self.player.deleagete = self;
 }
+- (void)backTouchEvent:(NSNumber *)status{
+    if (self.playingDemoSong) {
+        [self playTmpSong:nil];
+    }
+    else if (self.player.tagName == 1){
+        [self demoSong];
+    }
+    else{
+        if ([Tool getAutoPlaying]) {
+            [[PlaySongListVC shareSonglist] getAutoModel_Next_Song:[PlaySongListVC shareSonglist].songNameAuto];
+        }else{
+            [Tool getNextSongName];
+        }
+        
+    }
+}
+
 - (void)beginplayDaojishi{
     
     _TimeDjshi = [[MZTimerLabel alloc] initWithLabel:_showDaojishiTier andTimerType:MZTimerLabelTypeTimer];
@@ -132,8 +130,18 @@ static ViewController   *stationSelf = nil;
     }
     else if (timerLabel.tag == 200){
         _MyappComeSleep = NO;
-        
         [self demoSong];
+        
+        
+        //设定定时器
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:10.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
+        [self.timer fire]; // 触发
+        
     }
     else{
         if ([[Tool getbofangliebiaomoshi] intValue] == 1 && [[Tool getliebiaoneimoshi] intValue] == 1) {
@@ -313,12 +321,16 @@ static ViewController   *stationSelf = nil;
     
     [self SongName:@"实例音乐Demo - 纯音乐版"];
 }
+
 //自动手动切换
 - (IBAction)auteOrYourEvent:(UISegmentedControl *)sender {
     
     [self.player stopSong];
     
     if (sender.selectedSegmentIndex == 0) {
+        
+        self.player.tagName = 0;
+
         [Tool setAutoPlaying:[NSNumber numberWithBool:NO]];
         [UIView animateWithDuration:0.35 animations:^{
             _bottomY.constant = 10;
@@ -336,7 +348,12 @@ static ViewController   *stationSelf = nil;
         [self demoSong];
         
         //设定定时器
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
+        
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:10.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
         [self.timer fire]; // 触发
         
         
@@ -354,17 +371,21 @@ static ViewController   *stationSelf = nil;
 }
 - (void)qidongdingshi
 {
+    NSLog(@"跟东吧 --- %@",[NSDate date]);
+    
     if (_MyappComeSleep) {
         return;
     }
     
     if (self.player.musicPlayer.isPlaying && self.player.tagName != 1) {
-        
+        self.timer.fireDate = [NSDate distantFuture];
     }else{
         [Tool playSongAuto];
     }
 }
 - (void)demoSong{
+    
+    NSLog(@"zala === ");
     
     NSURL *nameStr = [Tool getAppSongName:@"demodemo" type:@"mp3"];
     [self.player PlayerName:nameStr];

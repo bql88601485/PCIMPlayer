@@ -26,5 +26,7 @@
 
 - (void)beginplayDaojishi;
 
+- (void)findeWenjianError;
+
 @end
 

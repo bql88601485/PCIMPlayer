@@ -132,18 +132,20 @@
     
     return files;
 }
-+ (NSInteger )getNowHour{
++ (FindSong )getNowHour{
 
+    FindSong findSong = {};
     NSDate *now = [NSDate date];
 //    NSLog(@"now date is: %@", now);
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *dateComponent = [calendar components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate:now];
     NSInteger hour = [dateComponent hour];
+    NSInteger minute = [dateComponent minute];
     
-    if ([dateComponent minute] >= 0 && [dateComponent minute] <= 1) {
-        return hour;
-    }
-    return -1;
+
+    findSong.minute = minute;
+    findSong.nowHour = hour;
+    return findSong;
     
 }
 
@@ -153,13 +155,18 @@
     
     for (int i=0;i<[[Tool getMeiTianCishu] intValue];i++) {
         NSString *str = [[[SettingVC shareSetting] TimeArray] objectAtIndex:i];
-        str = [[str componentsSeparatedByString:@":"] firstObject];
-        if ([str intValue] == [Tool getNowHour]) {
+        
+        NSArray *time = [str componentsSeparatedByString:@":"];
+        
+        NSInteger hour = [[time firstObject] intValue];
+        NSInteger minute = [[time lastObject] intValue];
+        FindSong findSong  = [Tool getNowHour];
+        if (findSong.nowHour == hour && findSong.minute == minute) {
             
             [TAGPlayer shareTAGPlayer].tagName = 2;
-            
             [PlaySongListVC  shareSonglist].kplayRow = 0;
             [TAGPlayer shareTAGPlayer].isStopPlay = NO;
+            
             songlist.songNameAuto = str;
             switch (i) {
                 case 0:

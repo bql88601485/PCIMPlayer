@@ -10,7 +10,7 @@
 #import "Tool.h"
 #import "MyPickerView.h"
 #import "RCToastView.h"
-
+#import "PlaySongListVC.h"
 typedef struct MYd {
     __unsafe_unretained UITextField *select;
     NSInteger tag;
@@ -169,6 +169,7 @@ static SettingVC *staticSelf = nil;
         
         if ([text1 isKindOfClass:[UITextField   class]]) {
             text1.delegate = self;
+            text1.userInteractionEnabled = YES;
             text2.delegate = self;
         }else if ([text1 isKindOfClass:[UISegmentedControl class]]){
             
@@ -180,43 +181,96 @@ static SettingVC *staticSelf = nil;
         switch (indexPath.row) {
             case 1:
             {
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                text1.delegate = nil;
+                text1.userInteractionEnabled = NO;
+                [Tool setMeiTianCishu:[NSString stringWithFormat:@"%zd",array.count]];
                 text1.text = [Tool getMeiTianCishu];
             }
                 break;
             case 2:
             {
-                text1.text = [Tool getdiyici];
-                text2.text = [Tool getdiyiciChang];
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                if (array.count != 0) {
+                    NSString *time = [array objectAtIndex:indexPath.row - 2];
+                    text1.text = [NSString stringWithFormat:@"%@",time];
+                    [Tool setdiyici:time];
+                    text1.userInteractionEnabled = NO;
+                    text2.text = [Tool getdiyiciChang];
+                }
             }
                 break;
             case 3:
             {
-                text1.text = [Tool getdierci];
-                text2.text = [Tool getdierciChang];
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                if (array.count == 0) {
+                    
+                }else{
+                    NSString *time = [array objectAtIndex:indexPath.row - 2];
+                    text1.text = [NSString stringWithFormat:@"%@",time];
+                    [Tool setdierci:time];
+                    text1.userInteractionEnabled = NO;
+                    text2.text = [Tool getdierciChang];
+                }
+                
             }
                 break;
             case 4:
             {
-                text1.text = [Tool getdisanci];
-                text2.text = [Tool getdisanciChang];
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                if (array.count == 0) {
+                    
+                }else{
+                
+                    NSString *time = [array objectAtIndex:indexPath.row - 2];
+                    text1.text = [NSString stringWithFormat:@"%@",time];
+                    [Tool setdisanci:time];
+                    text1.userInteractionEnabled = NO;
+                    text2.text = [Tool getdisanciChang];
+                }
             }
                 break;
             case 5:
             {
-                text1.text = [Tool getdisici];
-                text2.text = [Tool getdisiciChang];
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                if (array.count == 0) {
+                    
+                }else{
+                    
+                    NSString *time = [array objectAtIndex:indexPath.row - 2];
+                    text1.text = [NSString stringWithFormat:@"%@",time];
+                    [Tool setdisici:time];
+                    text1.userInteractionEnabled = NO;
+                    text2.text = [Tool getdisiciChang];
+                }
             }
                 break;
             case 6:
             {
-                text1.text = [Tool getdiwuci];
-                text2.text = [Tool getdiwuciChang];
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                if (array.count == 0) {
+                    
+                }else{
+                    NSString *time = [array objectAtIndex:indexPath.row - 2];
+                    text1.text = [NSString stringWithFormat:@"%@",time];
+                    [Tool setdiwuci:time];
+                    text1.userInteractionEnabled = NO;
+                    text2.text = [Tool getdiwuciChang];
+                }
             }
                 break;
             case 7:
             {
-                text1.text = [Tool getdiliuci];
-                text2.text = [Tool getdiliuciChang];
+                NSArray *array = [[PlaySongListVC shareSonglist] songlistName];
+                if (array.count == 0) {
+                    
+                }else{
+                    NSString *time = [array objectAtIndex:indexPath.row - 2];
+                    text1.text = [NSString stringWithFormat:@"%@",time];
+                    [Tool setdiliuci:time];
+                    text1.userInteractionEnabled = NO;
+                    text2.text = [Tool getdiliuciChang];
+                }
             }
                 break;
             case 9:
