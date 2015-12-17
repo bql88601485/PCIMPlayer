@@ -113,7 +113,6 @@ static ViewController   *stationSelf = nil;
     
     if (timerLabel.tag == 100) {//循环时间结束  进入休眠时间
         _MyappComeSleep = YES;
-        
         _daojiJianGeDay = [[MZTimerLabel alloc] initWithLabel:_hiddenLable andTimerType:MZTimerLabelTypeTimer];
         _daojiJianGeDay.tag = 200;
         _daojiJianGeDay.delegate = self;
@@ -132,16 +131,6 @@ static ViewController   *stationSelf = nil;
         _MyappComeSleep = NO;
         [self demoSong];
         
-        
-        //设定定时器
-        if (self.timer) {
-            [self.timer invalidate];
-            self.timer = nil;
-        }
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
-        [self.timer setFireDate:[NSDate date]];
-        [self.timer fire]; // 触发
-        
     }
     else{
         if ([[Tool getbofangliebiaomoshi] intValue] == 1 && [[Tool getliebiaoneimoshi] intValue] == 1) {
@@ -155,6 +144,7 @@ static ViewController   *stationSelf = nil;
         self.player.isStopPlay = YES;
         
         [self demoSong];
+        
     }
 }
 
@@ -378,7 +368,7 @@ static ViewController   *stationSelf = nil;
     }
     
     if (self.player.musicPlayer.isPlaying && self.player.tagName != 1) {
-        self.timer.fireDate = [NSDate distantFuture];
+   
     }else{
         [Tool playSongAuto];
     }
