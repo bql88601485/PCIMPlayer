@@ -137,6 +137,8 @@ static ViewController   *stationSelf = nil;
         }else{
             if (hour == 0 && minute ==0 && second <= 10) {
                 self.player.musicPlayer.volume = second/10;
+            }else{
+                self.player.musicPlayer.volume = 1;
             }
         }
         
@@ -204,12 +206,14 @@ static ViewController   *stationSelf = nil;
         _list.view.alpha = 0.2;
         [self.view addSubview:_list.view];
     }
-    if (nil == _setVC) {
-        _setVC = [SettingVC shareSetting];
-        _setVC.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
-        _setVC.view.alpha = 0.2;
-        [self.view addSubview:_setVC.view];
-    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1* NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (nil == _setVC) {
+            _setVC = [SettingVC shareSetting];
+            _setVC.view.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+            _setVC.view.alpha = 0.2;
+            [self.view addSubview:_setVC.view];
+        }
+    });
     
     IMP_WEAK_SELF(ViewController);
     _list.kchangeSong = ^(NSString *songName,NSString *path){
