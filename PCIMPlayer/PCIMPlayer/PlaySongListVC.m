@@ -544,7 +544,7 @@ static PlaySongListVC *stataicSelf = nil;
 
 - (void)getAutoModel_Next_Song:(NSString *)top{
 
-    if ([_songNameAuto intValue] != [top intValue]) {
+    if (![_songNameAuto isEqualToString:top]) {
         _item_2_Array = nil;
     }
     if (nil == _item_2_Array) {

@@ -20,7 +20,7 @@ static ViewController   *stationSelf = nil;
 @interface ViewController ()<PlayEvent>
 {
     
-   
+    float begntTIME;
 }
 @property (weak, nonatomic) IBOutlet UIButton *sesytemButton;
 @property (weak, nonatomic) IBOutlet UIButton *playTmpButton;
@@ -99,17 +99,51 @@ static ViewController   *stationSelf = nil;
     _TimeDjshi = [[MZTimerLabel alloc] initWithLabel:_showDaojishiTier andTimerType:MZTimerLabelTypeTimer];
     
     CGFloat time = [[[PlaySongListVC shareSonglist] playingTime] floatValue];
-    
+    _TimeDjshi.tag = 111;
     [_TimeDjshi setCountDownTime:time*60];
     _TimeDjshi.resetTimerAfterFinish = NO;
     _TimeDjshi.delegate = self;
     
     [_TimeDjshi  start];
     
+    begntTIME = 0;
+    
+    
+}
+-(void)timerLabel:(MZTimerLabel*)timerLabel countingTo:(NSTimeInterval)time timertype:(MZTimerLabelType)timerType;{
+    //音量逻辑
+    /**
+     音效渐强渐弱规则：
+     1、将音量分为0-100值；
+     2、每个时间段音乐播放时间分3个阶段：开始【前10秒钟】，正常播放、结尾【后10秒钟】
+     3、 开始（从0 - 100渐强），正常播放（保持）、结尾（从100 - 0渐弱）
+     */
+    
+    //音量逐渐变大
+    if (timerLabel.tag == 111) {
+        
+        int hour = (int)(time/3600);
+        int minute = (int)(time - hour*3600)/60;
+        int second = time - hour*3600 - minute*60;
+        if (begntTIME == 0) {
+            if (self.player.musicPlayer.currentTime >= 0 && self.player.musicPlayer.currentTime <= 10) {
+                self.player.musicPlayer.volume = self.player.musicPlayer.currentTime/10;
+            }else{
+                begntTIME = -1;
+                if (self.player.musicPlayer.volume <= 1) {
+                    self.player.musicPlayer.volume = 1;
+                }
+            }
+        }else{
+            if (hour == 0 && minute ==0 && second <= 10) {
+                self.player.musicPlayer.volume = second/10;
+            }
+        }
+        
+        
+    }
 }
 -(void)timerLabel:(MZTimerLabel*)timerLabel finshedCountDownTimerWithTime:(NSTimeInterval)countTime{
-    
-    
     
     if (timerLabel.tag == 100) {//循环时间结束  进入休眠时间
         _MyappComeSleep = YES;

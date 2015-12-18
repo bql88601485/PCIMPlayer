@@ -166,8 +166,6 @@
             [TAGPlayer shareTAGPlayer].tagName = 2;
             [PlaySongListVC  shareSonglist].kplayRow = 0;
             [TAGPlayer shareTAGPlayer].isStopPlay = NO;
-            
-            songlist.songNameAuto = str;
             switch (i) {
                 case 0:
                     songlist.playingTime = [Tool getdiyiciChang];
@@ -208,8 +206,9 @@
                 }
             }
             
-            
             [songlist getAutoModel_Next_Song:str];
+            
+            songlist.songNameAuto = str;
             
             return YES;
         }

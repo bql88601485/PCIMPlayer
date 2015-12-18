@@ -185,29 +185,14 @@ static TAGPlayer *staticSelf = nil;
     NSString *totalTime =[NSString stringWithFormat:@"%02d:%02d",(int)self.musicPlayer.duration/60,(int)self.musicPlayer.duration%60];
     self.currentTime.text = [NSString stringWithFormat:@"%@/%@",currentTimeStr,totalTime];
     
-    //音量逻辑
-    /**
-     音效渐强渐弱规则：
-     1、将音量分为0-100值；
-     2、每个时间段音乐播放时间分3个阶段：开始【前10秒钟】，正常播放、结尾【后10秒钟】
-     3、 开始（从0 - 100渐强），正常播放（保持）、结尾（从100 - 0渐弱）
-     */
-
-    //音量逐渐变大
-    
     if ([[Tool getyinxiao] boolValue]) {
-        if (self.musicPlayer.currentTime >= 0 && self.musicPlayer.currentTime <= 10) {
-            self.musicPlayer.volume = self.musicPlayer.currentTime/10;
-        }else if (self.musicPlayer.duration - self.musicPlayer.currentTime <= 10){
-            self.musicPlayer.volume = (self.musicPlayer.duration - self.musicPlayer.currentTime)/10;
-        }
+        
     }else{
         if (self.musicPlayer.volume < 1) {
             self.musicPlayer.volume = 1;
         }
     }
-    
-//    NSLog(@"\n play = %0.2f   |||||||  volum = %0.2f \n",self.musicPlayer.currentTime ,self.musicPlayer.volume);
+
     
     CGFloat value =self.musicPlayer.duration - self.musicPlayer.currentTime;
     
