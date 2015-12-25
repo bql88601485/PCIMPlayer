@@ -95,7 +95,11 @@ static ViewController   *stationSelf = nil;
 }
 
 - (void)beginplayDaojishi{
-    
+    if (_TimeDjshi) {
+        [_TimeDjshi reset];
+        [_TimeDjshi removeFromSuperview];
+        _TimeDjshi  = nil;
+    }
     _TimeDjshi = [[MZTimerLabel alloc] initWithLabel:_showDaojishiTier andTimerType:MZTimerLabelTypeTimer];
     
     CGFloat time = [[[PlaySongListVC shareSonglist] playingTime] floatValue];
@@ -149,6 +153,9 @@ static ViewController   *stationSelf = nil;
     
     if (timerLabel.tag == 100) {//循环时间结束  进入休眠时间
         _MyappComeSleep = YES;
+        if (_daojiJianGeDay) {
+            [_daojiJianGeDay reset];[_daojiJianGeDay removeFromSuperview];_daojiJianGeDay= nil;
+        }
         _daojiJianGeDay = [[MZTimerLabel alloc] initWithLabel:_hiddenLable andTimerType:MZTimerLabelTypeTimer];
         _daojiJianGeDay.tag = 200;
         _daojiJianGeDay.delegate = self;
@@ -363,10 +370,25 @@ static ViewController   *stationSelf = nil;
         [UIView animateWithDuration:0.35 animations:^{
             _bottomY.constant = 10;
         }];
+        if (self.timer) {
+            [self.timer invalidate];
+            self.timer = nil;
+        }
         
-        // 暂停定时器
-        self.timer.fireDate = [NSDate distantFuture];
+        if (_daojiXunHuanDay) {
+            [_daojiXunHuanDay reset];
+            [_daojiXunHuanDay removeFromSuperview];
+            _daojiXunHuanDay = nil;
+        }
         
+        if (_TimeDjshi) {
+            [_TimeDjshi reset];
+            [_TimeDjshi removeFromSuperview];
+            _TimeDjshi = nil;
+        }
+        
+        
+        _showDaojishiTier.text = @"00:00:00";
     }else{
         [Tool setAutoPlaying:[NSNumber numberWithBool:YES]];
         [UIView animateWithDuration:0.35 animations:^{
@@ -383,9 +405,13 @@ static ViewController   *stationSelf = nil;
         
         self.timer=[NSTimer scheduledTimerWithTimeInterval:10.f target:self selector:@selector(qidongdingshi) userInfo:nil repeats:YES];
         [self.timer fire]; // 触发
-        
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] run];
         
         //触发循环天数
+        if (_daojiXunHuanDay) {
+            [_daojiXunHuanDay reset];[_daojiXunHuanDay removeFromSuperview];_daojiXunHuanDay = nil;
+        }
         _daojiXunHuanDay = [[MZTimerLabel alloc] initWithLabel:_hiddenLable andTimerType:MZTimerLabelTypeTimer];
         _daojiXunHuanDay.tag = 100;
         _daojiXunHuanDay.delegate = self;
